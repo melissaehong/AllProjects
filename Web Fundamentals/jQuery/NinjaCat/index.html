@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CatNinja</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("img").click(function(){
+		var temp = $(this).attr("src");
+		$(this).attr("src", $(this).attr("src2"));
+		$(this).attr("src2", temp);
+	});
+})
+
+</script>
+<script type="text/css">
+/*#container{
+	width:1020px;
+	margin: 0 auto;
+}
+
+#container img {
+	display:block;
+	width:800;
+	border-style:solid;
+	border-width:1px;
+	border-color:white;
+} */
+</script>
+</head>
+<body>
+	<div id="box">
+		<img src="cat0.png" src2="ninja0.png" class="picture" id="one">
+		<br>
+		<img src="cat1.png" src2="ninja1.png" class="picture" id="two">
+		<br>
+		<img src="cat2.png" src2="ninja2.png" class="picture" id="three">
+		<br>
+		<img src="cat3.png" src2="ninja3.png" class="picture" id="four">
+		<br>
+		<img src="cat4.png" src2="ninja4.png" class="picture" id="five">
+	</div>
+</body>
+</html>

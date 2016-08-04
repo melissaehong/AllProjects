@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>jQuery</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+
+		$('h1').click(function(){
+			alert('hello');
+		})
+		
+		$('#hide').click(function(){
+			$('p').hide();
+		})
+
+		$('#show').click(function(){
+			$('p').show();
+		})
+
+		$('a').focus(function(){
+			$(this).slideUp();
+		})
+
+		$("input").focus(function() {
+			$(this).next("span").css("display", "inline").fadeOut(1000);
+		})
+		
+		$("p").first().addClass("highlight");
+
+		$("#value").keyup(function(){
+			var value = $(this).val();
+			$("h2").text(value);
+		})
+		.keyup();
+
+		$("h3").text("This is the replacement text");
+
+		var important = $("p").attr("title");
+		$("div").text(important);
+
+		$("#happy").html("I feel <b>happy</b>" );
+		
+		$("#data1").click(function(){
+			$("h5").data("greeting", "hi there");
+		});
+		
+		$("#data2").click(function(){
+			alert($("h5").data("greeting"));
+		});
+
+		$("h1").before("I was here before");
+
+		$("h1").after("I was here after");
+
+		$("h1").append("(I am appended)");
+
+		$("#button1").click(function(){
+			$("#toggle").toggle();
+			});
+
+		$("#button2").click(function(){
+			$("em").fadeIn();
+		});
+
+		$("#button3").click(function(){
+			$("em").fadeOut();
+		});
+
+		$("#button4").click(function(){
+			$("#slide").slideUp();
+		});
+
+		$("#button5").click(function(){
+			$("#slide").slideDown();
+		});
+
+		$("#button6").click(function(){
+			$("#slide2").slideToggle();
+		});
+
+	})
+</script>
+<script type="text/css">
+
+	.highlight{
+	font-size:30px;
+	}
+
+	hr {
+	border-top:1px;
+	}
+
+	img {
+	display:none;
+	}
+
+</script>
+</head>
+<body>
+	<hr>
+	<h1>Hello</h1>
+	<hr>
+	<p title="This is important">Paragraph 1</p>
+	<p title="This is also important">Paragraph 2</p>
+	<buttom id='hide'>Hide Paragraph</buttom>
+	<buttom id='show'>Show Paragraph</buttom>
+	<hr>
+	<p>
+		<a href="#">Touch me, and I will slide up</a>
+	</p>
+	<hr>
+	<input type="text"><span>Click left, and I will fade out</span>
+	<hr>
+	<input type="text" value="type me" id="value">
+	<h2></h2>
+	<hr>
+	<h3>This is not the replacement text</h3>
+	<hr>
+	<p>The title is:</p><div></div>
+	<hr>
+	<p>How do I feel?</p><div id="happy"></div>
+	<hr>
+	<button id="data1">Attach data here!</button>
+	<button id="data2">Get data here1</button>
+	<hr>
+	<h5></h5>
+		<button id="button1">
+		Click me</button>
+		<img id="toggle" src="https://www.haskell.org/happy/Happy.gif" width="100px" height="100px" alt="">
+	<hr>
+	<button id="button2">Click for fade in</button>
+	<button id="button3">Click for fade out</button>
+	<em>Text to fade in and out</em>
+	<hr>
+	<button id="button4">Click to slide up</button>
+	<button id="button5">Click to slide down </button>
+	<img src="https://i.ytimg.com/vi/6sta6Gkpgcw/maxresdefault.jpg" alt="" height="100px" width="100px" id="slide">
+	<hr>
+	<button id="button6">Click to slide toggle</button>
+	<img src="https://media.giphy.com/media/wvF9tTPPW0pcQ/giphy.gif" width="380" height="220" alt="" id="slide2">
+
+	
+</body>
+</html>

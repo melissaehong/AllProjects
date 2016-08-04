@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+<meta charset="utf-8">
+<title>Disappearing Ninja</title>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.picture').click(function(){
+			$(this).hide();
+		})
+
+		$('.button').click(function(){
+			$('.picture').show();
+		})
+	})
+
+</script>
+</head>
+<body>
+	<div>
+		<img src="http://www.animationmagazine.net/wordpress/wp-content/uploads/the-little-prince-post-3.jpg" width="200px" height="100px" alt="" class="picture" id="pic1">
+		<img src="http://www.animationmagazine.net/wordpress/wp-content/uploads/the-little-prince-post-3.jpg" width="200px" height="100px" alt="" class="picture" id="pic2">
+		<img src="http://www.animationmagazine.net/wordpress/wp-content/uploads/the-little-prince-post-3.jpg" width="200px" height="100px" alt="" class="picture" id="pic3">
+		<img src="http://www.animationmagazine.net/wordpress/wp-content/uploads/the-little-prince-post-3.jpg" width="200px" height="100px" alt="" class="picture" id="pic4">
+		<br>
+		<img src="http://www.animationmagazine.net/wordpress/wp-content/uploads/the-little-prince-post-3.jpg" width="200px" height="100px" alt="" class="picture" id="pic5">
+		<img src="http://www.animationmagazine.net/wordpress/wp-content/uploads/the-little-prince-post-3.jpg" width="200px" height="100px" alt="" class="picture" id="pic6">
+		<img src="http://www.animationmagazine.net/wordpress/wp-content/uploads/the-little-prince-post-3.jpg" width="200px" height="100px" alt="" class="picture" id="pic7">
+		<img src="http://www.animationmagazine.net/wordpress/wp-content/uploads/the-little-prince-post-3.jpg" width="200px" height="100px" alt="" class="picture" id="pic8">
+	</div>
+	<button class="button">Click to Restore</button>
+</body>
+</html>

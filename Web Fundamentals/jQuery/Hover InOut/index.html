@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Hovering</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("img").hover(function(){
+				var change=$(this).attr("src");
+				$(this).attr("src", $(this).attr("src2"));
+				$(this).attr("src2", change);
+			});
+		});
+	</script>
+	<script type="text/css">
+	img{
+	width:200px;
+	height:200px;
+	alt:"":
+	}
+	</script>
+</head>
+<body>
+<img src="prince1.jpg" src2="prince3.jpg">
+<img src="prince2.jpg" src2="prince4.jpg">
+<img src="prince3.jpg" src2="prince1.jpg">
+<img src="prince4.jpg" src2="prince2.jpg">
+</body>
+</html>

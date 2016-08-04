@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Adding User</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("form").submit(function(){
+				$("#one").append("<p>" + $('#first').val() + "</p>");
+				$("#two").append("<p>" + $('#last').val() + "</p>");
+				$("#three").append("<p>" + $('#email').val() + "</p>");
+				$("#four").append("<p>" + $('#contact').val() + "</p>");
+				return false;
+			});
+		})
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<table id="table">
+			<thead class="table1">
+				<tr id="column">
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email Address</tb>
+					<th>Contact#</th>
+				</tr>
+				<tr id="hello">
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="one"></td>
+					<td id="two"></td>
+					<td id="three"></td>
+					<td id="four"></td>
+				</tr>
+		</table>
+	</div>
+	<div id="div2">
+		<h1>Add User</h1>
+		<hr>
+		<form method="post">
+			<p id="hi">
+				<label>First Name: 
+					<input type="text" value="First Name" id="first" name="first">
+				</label>
+			</p>
+			<p>
+				<label>Last Name: 
+					<input type="text" value="Last Name" id="last" name="last">
+				</label>
+			</p>
+			<p>
+				<label>Email Address: 
+					<input type="text" value="Email Address" id="email" name="email">
+				</label>
+			</p>
+			<p>
+				<label>Contact No.:
+				<input type="text" value="Phone #" id="contact" name="contact">
+				</label>
+			</p>
+			<p><input type="submit" value="Add User">
+		</form>
+		<button id="btn">click me</button>
+	</div>
+</body>
+</html>

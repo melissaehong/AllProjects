@@ -1,0 +1,19 @@
+mkdir = make directory
+cd . = in same directory
+cd .. = move up one directory
+pwd = print current directory
+rm -rf = remove non-empty directory
+touch = create new file
+rm = remove file
+mv .. = move file to different directory
+cp = copy file
+
+git init = start git
+git add index.html
+git commit -m "add html"
+git log
+git revert -n
+git branch new_feature
+git checkout
+git checkout -b new_feature = to set branch as current
+git commit -am "blah" = in new brancha

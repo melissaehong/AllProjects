@@ -1,0 +1,134 @@
+*{
+	padding:0px;
+	margin:0px;
+	font-size:8pt;
+	font-family:Arial;
+	vertical-align:baseline;
+	text-align: center;
+} 
+
+ul{
+	list-style:none;
+}
+	ul li{
+		height:41px;
+		width:41px;
+		border:1px solid gray;
+		margin:0px;
+	}
+	
+#wrapper{
+	margin: 0px auto;
+	width:1000px;
+	background-color:#EEEEEE;
+}
+
+#group{
+	display: inline-block;
+}
+
+#period, .blue, .pink, .yellow{
+	display: inline-block;
+}
+
+#group, #period, #extra{
+	color:red;
+}
+	#group li, #period li{
+		height:23px;
+		width:23px;
+		border:none;
+		padding:10px;
+	}
+
+h1{
+	font-size:11pt;
+	font-weight:bold;
+}
+
+#group li{
+	display:inline-block;
+}
+
+.blue li{
+	background-color:#689BFF;
+}
+
+	.blue h1{
+		color:#1913A2;
+	}
+
+.pink{
+	margin-top:132px;
+}
+
+	.pink li{
+		background-color:#FD9A98;
+	}
+
+	.pink h1{
+		color:#1913A2;
+	}
+
+.yellow{
+	margin-top:44px;
+}
+	.yellow li{
+		background-color:#FECB00;
+	}
+
+	.yellow h1{
+		color:#1913A2;
+	}
+
+.green{
+	margin-left:0px;
+}
+
+	.green li{
+		background-color:#1FCA21;
+		display:inline;
+		float:left;
+	}
+
+	.green h1{
+		color:#1913A2;
+	}
+
+.blue li, .green li, .yellow li, .pink li{
+	font-size:7pt;
+}
+
+#extra, #green_elements{
+	display: inline-block;
+}
+
+#extra{
+	width: 100px;
+	margin-left: 50px;
+}
+
+#less{
+	margin-top:44px;
+}
+
+#first_pink,#section{
+	margin-left:12px;
+}
+
+#first_green, #extra{
+	margin-top:20px;
+}
+
+#last_yellow{
+	margin-top:0px;
+}
+
+#extra li{
+	padding-top:10px;
+	border:none;
+}
+
+#green_elements li{
+	margin: 1px;
+}

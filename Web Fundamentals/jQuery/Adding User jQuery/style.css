@@ -1,0 +1,40 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+#div1 {
+	margin:0px;
+} 
+
+table thead{
+	border:1px solid black;
+	width:400px;
+	height:800px;
+}
+
+table th{
+	padding:0px 20px 0px 0px;
+	margin:0px;
+}
+
+#div2{
+	width:400px;
+	height:400px;
+	display:inline-block;
+	text-align:right;
+	margin-top:40px;
+}
+
+form{
+	line-height: 1.5;
+}
+
+h1{
+	text-align:left;
+}
+
+button{
+	margin-top:20px;
+	margin-left:160px;
+}

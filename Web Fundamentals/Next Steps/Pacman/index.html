@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+	<title>Pacman Demo</title>
+	<style type="text/css">
+		body{
+			background-color:black;
+		}
+		div.row div{
+			width:20px;
+			height:20px;
+			display:inline-block;
+		}
+		div.brick{
+			width:;
+			background-color:blue;
+		}
+		div.coin{
+			background: url(coin.gif);
+			background-repeat:no-repeat;
+			background-position:center;
+		}
+		div.pacman{
+			background: url(pacman.gif);
+			background-repeat:no-repeat;
+			background-position:center;
+			background-size:cover;
+		}
+		div.empty{
+		
+		}
+	</style>
+</HEAD>
+<BODY>
+
+	<div class="row">
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+	</div>
+	<div class="row">
+		<div class="brick"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="pacman"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="brick"></div>
+		<div class="coin"></div>
+		<div class="brick"></div>
+	</div>
+	<div class="row">
+		<div class="brick"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="brick"></div>
+		<div class="coin"></div>
+		<div class="brick"></div>
+	</div>
+	<div class="row">
+		<div class="brick"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="empty"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="coin"></div>
+		<div class="brick"></div>
+	</div>
+	<div class="row">
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="empty"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+		<div class="brick"></div>
+	</div>
+	<script>
+
+	var world = [
+	[2,2,2,2,2,2,2,2,2,2],
+	[2,1,1,1,1,1,1,1,1,2],
+	[2,1,1,1,1,1,1,1,1,2],
+	[2,1,1,1,1,1,1,1,1,2],
+	[2,1,1,1,1,1,1,1,1,2],
+	[2,1,1,1,1,1,1,1,1,2],
+	[2,1,1,1,1,1,1,1,1,2],
+	[2,1,1,1,1,1,1,1,1,2],
+	[2,2,2,2,2,2,2,2,2,2]
+	];
+
+	function displayWorld(){
+		var output = '';
+
+		for(var i=0; i<world.length; i++){
+			for(var j=0; j<world[i].length; j++){
+				output = output + world[i][j];
+			}
+		}
+		console.log(output);
+	}
+
+
+	</script>
+</BODY>
+</HTML>

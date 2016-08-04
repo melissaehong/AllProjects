@@ -1,0 +1,119 @@
+*{
+margin:0;
+padding:0;
+}
+
+#container{
+	width:1000px;
+	height:600px;
+}
+
+	.top{
+		width:980px;
+		height:35px;
+		background-color:gainsboro;
+		display:inline-block;
+	}
+
+	.top p{
+		height:14px;
+		color:red;
+		font-size:12px;
+		margin-left:12px;
+		vertical-align: top;
+		display:block;
+		}
+
+	.top ul li{
+		display:inline-block;
+		padding-left:13px;
+		padding-right:13px;
+		color:red;
+		font-size:12px;
+		margin-bottom:1px;
+	}
+
+
+	.middle{
+		width: 980px;
+		height: 400px;
+		background-color: gainsboro;
+		display:inline-block;
+	}
+
+	.middle ul li{
+			width:32px;
+			height:35px;
+			background-color: white;
+			list-style-type: none;
+			color: black;
+			font-size:10px;
+			padding:4px;
+			margin:1px;
+			border:1px solid black;
+			list-style-position:1px;
+		}
+
+	.middle span{
+			display:block;
+			font-size:14px;
+			color:darkblue;
+			line-height:.8;
+		}
+
+		#numbers{
+			margin-left:0px;
+			width:45px;
+			height:300px;
+			background-color: gainsboro;
+			display:inline-block;
+		}
+
+		#numbers ul li{
+			width:45px;
+			height:30px;
+			background-color: gainsboro;
+			list-style-type: none;
+			color: red;
+			font-size:12px;
+			text-align:center;
+			margin-top:12px;
+			padding:2px;
+			border:none;
+		}
+
+		#one{
+			background-color:gainsboro;
+			display:inline-block;
+			width:40px;
+			height:300px;
+			vertical-align: top;
+			text-align:center;
+		}
+
+
+		#two{
+			background-color:gainsboro;
+			display:inline-block;
+			width:40px;
+			height:300px;
+			vertical-align: top;
+			text-align:center;
+			margin-top:46px;
+		}
+
+		#three{
+			background-color:lavender;
+			display:inline-block;
+			width:457px;
+			height:182px;
+			vertical-align: top;
+			text-align:center;
+			margin-top:139px;
+		}	
+
+	.bottom{
+		width: 1000px;
+		height:100px;
+		background-color: pink;
+	}

@@ -1,0 +1,41 @@
+*()
+
+.shapes{
+}
+
+#square{
+	width:140px;
+	height:140px;
+	background:blue;
+	margin-bottom:10px;
+}
+
+#circle{
+	width:140px;
+	height:140px;
+	border-radius:70px;
+	background:blue;
+	margin-bottom:10px;
+}
+
+#triangle{
+	width:0px;
+	height:0px;
+	border-left:70px solid transparent;
+	border-right:70px solid transparent;
+	border-bottom:140px solid blue;
+	margin-bottom:10px;
+}
+
+#pacman{
+	width:0px;
+	height:0px;
+	border-right: 80px solid transparent;
+	border-left:80px solid blue;
+	border-top:80px solid blue;
+	border-bottom:80px solid blue;
+	border-top-left-radius:80px;
+	border-top-right-radius:80px;
+	border-bottom-left-radius:80px;
+	border-bottom-right-radius:80px;
+}
