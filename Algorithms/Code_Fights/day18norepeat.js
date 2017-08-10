@@ -24,7 +24,7 @@ function find_FirstNotRepeatedChar(str) {
 }
 
 
-find_FirstNotRepeatedChar(a);
+//find_FirstNotRepeatedChar(a);
 
 //better one!
 
