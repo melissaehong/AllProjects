@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'app/css/style1.css' %}">
+  </head>
+  <body>
+    <h1>Books</h1>
+    <table>
+      <tr>
+         <th>Id</th>
+         <th>Title</th>
+         <th>Author</th>
+         <th>Category</th>
+      </tr>
+      {% for book in books %}
+      <tr>
+        <td>{{book.id}}</td>
+        <td>{{book.title}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.category}}</td>
+      </tr>
+      {% endfor %}
+     </thead>
+    </table>
+    <br>
+    <form action = '/process' method = 'post'>
+       {% csrf_token %}
+      Title<input type = 'text' name = 'title'><br>
+      Category<input type = 'text' name = 'category'>
+      Author<input type = 'text' name = 'author'>
+      <input type = submit value = 'Submit'>
+    </form>
+  </body>
+</html>

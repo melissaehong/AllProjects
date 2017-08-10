@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome {{ session['user']['first_name']}}</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="styles/style.css") }} '>
+  </head>
+  <body>
+    <div class = 'container'>
+      <h1> User {{ session['user']['id'] }}</h1>
+      <p> Full Name: {{ session['user']['first_name'] }} {{ session['user']['last_name'] }} </p>
+      <p> Email: {{ session['user']['email'] }}</p>
+      <p> Created at: {{ session['user']['created_at'].strftime('%B %M, %Y')}}</p>
+
+      <form class='actions' action='/users/{{ session["user"]["id"] }}/edit' method='GET'>
+  			<input class='btn btn-info' type='submit' value='Edit'>
+  		</form>
+      <form class='actions' action='/users/{{ session["user"]["id"] }}/destroy' method = 'GET'>
+        <input class='btn btn-danger' type='submit' value='Delete'>
+      </form>
+      <form class='actions' action='/users' method='GET'>
+        <input class='btn btn-primary' type='submit' value='Go Back'>
+      </form>
+    </div>
+    </body>
+</html>

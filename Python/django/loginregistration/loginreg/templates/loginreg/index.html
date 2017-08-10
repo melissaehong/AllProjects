@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+{% load staticfiles %}
+<head>
+  <title>Login Registration</title>
+</head>
+<body>
+  {% for message in messages %}
+  {{ message }}
+  {% endfor %}
+  <h1>Registration</h1>
+  <form action='/register' method='post'>
+    {% csrf_token %}
+    First Name:
+    <input type='text' name='first_name'>
+    Last Name:
+    <input type='text' name='last_name'>
+    Email:
+    <input type='text' name='email'>
+    Password:
+    <input type='password' name='password'>
+    Confirm Password:
+    <input type='password' name='confirm_password'>
+    <input type='submit' value='Register'>
+  </form>
+  <form action='/login' method='post'>
+    {% csrf_token %}
+    Email:
+    <input type='text' name='email'>
+    Password:
+    <input type='password' name='password'>
+    <input type='submit' value='Login'>
+  </form>
+</body>
+</html>

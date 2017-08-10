@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <p>{{message}}</p>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <h1>The Wall!</h1>
+    Hello {{session['user']['first_name']}} {{session['user']['last_name']}}
+    <p>
+    <form action = '/logout'>
+      <input type = 'submit' value = 'Log Off'>
+    </form>
+    <p>
+    <form action = '/message' method = 'post'>
+      <textarea name = 'message'></textarea>
+      <input type = 'submit' value = "post a message">
+    </form>
+    <p>
+    Messages:<br>
+    <p>
+      {% if session['message'] %}
+        {% for message in session['message'] %}
+        <p>{{ message['first_name'] }} {{ message[last_name] }} - {{ message ['created_at'].strftime('%B %d %Y - %H:%M %p')}}</p>
+        {% if message['user_id'] == session['user']['id'] %}
+          <form action='/delete_message' method='POST'>
+            <input type='submit' value='Delete Message'>
+            <input type='hidden' name='message_id' value='{{ message["id"] }}'>
+          </form>
+        {% endif %}
+       {{ message['message'] }}
+       {% if session['comment'] %}
+         {% for comment in session['comment'] %}
+         {% if message['id'] == comment['message_id'] %}
+            <p>&nbsp&nbsp&nbsp{{ comment['first_name'] }} {{ comment['last_name'] }} - {{ comment ['created_at'].strftime('%B %d %Y - %H:%M %p')}} </p>
+            {% if comment['user_id'] == session['user']['id'] %}
+              <form action='/delete_comment' method='POST'>
+                <input type='submit' value='Delete Comment'>
+                <input type='hidden' name='comment_id' value='{{ comment["id"] }}'>
+              </form>
+              {% endif %}
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp{{ comment['comment']}}
+            {% endif %}
+         {% endfor %}
+       {% endif %}
+        <form action = '/comment' method = 'post'>
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<textarea name = 'comment'></textarea>
+          <input type='hidden' name='message_id' value='{{ message["id"] }}'>
+          <input type = 'submit' value = 'post a comment'>
+        </form>
+        {% endfor %}
+      {% endif %}
+  </body>
+</html>

@@ -1,0 +1,57 @@
+
+
+#container{
+  margin-left: 10px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+#container #h1{
+  margin-left: 10px;
+}
+#top{
+  display: inline-block;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+
+#gold{
+  border: 3px solid black;
+  width: 200px;
+  height: 30px;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+#center{
+  padding-left: 10px;
+}
+
+.building{
+ font-family: "Comic Sans MS", "Comic Sans", cursive;
+ display: inline-block;
+ width: 300px;
+ border: 3px solid black;
+ margin-right: 5px;
+ text-align: center;
+ padding-bottom: 10px;
+ margin-left: 10px;
+}
+
+#bottom{
+  display:inline-block;
+  margin-top: 30px;
+  padding-left: 10px;
+}
+
+#activities{
+  width: 800px;
+  height: 200px;
+}
+
+.Gained {
+  color: green;
+}
+
+.Lost {
+  color: red;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='description' content='This is the Wall!'>
+	<title>TheWall - Log In or Sign In</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="styles/style.css") }}'>
+</head>
+<body>
+	<div id='container'>
+		<div class='loginContainer'>
+			<h1>TheWall</h1>
+			<form action='/login' method='POST'>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+				{% for category, message in messages %}
+					{% if category == 'loginError' %}
+						<p class='loginError'>{{ message }}</p>
+					{% endif %}
+				{% endfor %}
+			{% endwith %}
+			<label>
+				<span>Email</span><input type='email' name='email'>
+			</label>
+			<label>
+				<span>Password</span><input type='password' name='password'>
+			</label>
+			<label>
+				<span></span><input class='button' type='submit' value='Log In'>
+			</label>
+			</form>
+		</div>
+		<div class='registerContainer'>
+			<div class='row'>
+				<div class='inner'>
+					<h2>Connect with friends and the world around you on TheWall</h2>
+					<img src='{{ url_for("static", filename="images/map.png")}}' alt='world map with users'>
+				</div>
+				<div class='inner'>
+					<h1>Sign Up</h1>
+					<h4>It's free and always will be.</h4>
+					{% with messages = get_flashed_messages(with_categories=true) %}
+						{% for category, message in messages %}
+								{% if category == 'registerError' %}
+									<p class='{{ category }}'>{{ message }} </p>
+								{% endif %}
+						{% endfor %}
+					{% endwith %}
+					<form action='/register' method='POST'>
+						<label>
+							<input type='text' name='first_name' placeholder='First Name'>
+							<input type='text' name='last_name' placeholder='Last Name'>
+						</label>
+						<label>
+							<input type='email' name='email' placeholder='Email'>
+						</label>
+						<label>
+							<input type='password' name='password' placeholder='Password'>
+						</label>
+						<label>
+							<input type='password' name='confirm_password' placeholder='Confirm Password'>
+						</label>
+						<label>
+							<input class='btn btn-success' type='submit' value='Sign Up'>
+						</label>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+Contact GitHub API Training Shop Blog About

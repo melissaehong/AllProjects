@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    {% load staticfiles %}
+    <h1>Results:
+    <br>Attempt # {{request.session.attempt}}</h1>
+    Name: {{request.session.name}}
+    Location: {{request.session.location}}
+    Language: {{request.session.language}}
+    Comment: {{request.session.comment}}
+  </body>
+</html>

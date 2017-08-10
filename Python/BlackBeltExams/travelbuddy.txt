@@ -1,0 +1,10 @@
+1. create login and registration
+  a. Registration
+    1. index form
+    2. models
+    3. views
+    
+  b. Login
+
+2. create trips
+3. add users to other trips

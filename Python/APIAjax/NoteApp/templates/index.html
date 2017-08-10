@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Notes</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style_sheet.css') }}">
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#create').submit(function(){
+        $.post('/notes/create', $(this).serialize(), function(data){
+          $('#notes').html(data);
+        });
+        return false;
+      });
+      $('#get_all_button').click(function(){
+      $.get('/notes/index_html', function(data){
+        $('#notes').html(data);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <hr>
+  <h2>Add a Note:</h2>
+  <form action='/notes/create' method='POST' id = "create">
+    <label for="title">Title:<input type="text" name="title" id="title"></label>
+    <label for="description">Description:<textarea name="description" id="description"></textarea></label>
+    <input type="submit" value="Add Note">
+  </form>
+  <button id = "get_all_button">Get All Posts</button>
+  <div id = "notes"></div>
+</body>
+</html>

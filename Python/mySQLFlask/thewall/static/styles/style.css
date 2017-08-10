@@ -1,0 +1,234 @@
+* {
+	/*outline: 2px solid green; */
+	margin: 0 auto;
+	padding: 0;
+}
+/*index.html*/
+#container {
+
+}
+	.loginContainer {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: #3b5998;
+	}
+		.loginContainer h1 {
+			margin-left: 10%;
+			color: white;
+			display: inline-block;
+		}
+			.loginContainer form {
+				margin-left: 25%;
+				display: inline-block;
+				vertical-align: top;
+				margin-top: 10px;
+			}
+				.loginContainer label {
+					display: inline-block;
+					vertical-align: top;
+					margin-left: 10px;
+				}
+					.loginContainer span {
+						display: block;
+						color: white;
+						font-weight: normal;
+					}
+					.loginContainer input {
+						display: block;
+					}
+					.loginContainer .button {
+						padding: 2px 5px;
+						text-align: center;
+						margin-top: 17px;
+						height: 25px;
+						background-color: #4267b2;
+						border: 1px solid #29487d;
+						color: white;
+						font-size: 13px;
+					}
+					.loginContainer .button:hover {
+						background-color: #3b5998;
+					}
+					.loginContainer
+	.registerContainer {
+		background-color: #edf0f5;
+	}
+		.registerContainer .row {
+			margin-top: 20px;
+			text-align: center;
+		}
+		.registerContainer .inner {
+			text-align: left;
+			display: inline-block;
+			width: 500px;
+			vertical-align: top;
+		}
+			.registerContainer img {
+				width: 500px;
+			}
+		.registerContainer:nth-child(2) .inner {
+			margin-left: 20px;
+		}
+			.registerContainer h1 {
+				font-weight: bold;
+			}
+			.loginError {
+				color: red;
+				font-weight: bold;
+			}
+			.registerError {
+				color: red;
+				font-weight: bold;
+			}
+				.registerContainer label {
+					display: block;
+					margin-bottom: 10px;
+				}
+					.registerContainer input {
+						border-radius: 3px;
+						border: 1px solid grey;
+						padding: 10px;
+					}
+					.registerContainer label:first-child input {
+						margin-right: 10px;
+					}
+					.registerContainer label:nth-child(2) input, .registerContainer label:nth-child(3) input, .registerContainer label:nth-child(4) input {
+						width: 373px;
+					}
+/*wall.html*/
+body {
+	background-color: #e9ebee;
+}
+.wallHeader {
+	background-color: #3b5998;
+	color: white;
+}
+	.wallHeader img {
+		width: 30px;
+		border-radius: 2px;
+		vertical-align: top;
+		margin-left: 20px;
+		margin-top: 13px;
+		margin-right: 5px;
+	}
+	.wallHeader h3 {
+		display: inline-block;
+	}
+	.wallHeader h4 {
+		display: inline-block;
+		float: right;
+		margin-top: 20px;
+		margin-right: 20px;
+	}
+	.wallHeader form {
+		display: inline-block;
+		float: right;
+	}
+		.wallHeader input {
+			padding: 2px 5px;
+			text-align: center;
+			margin-top: 16px;
+			margin-right: 15px;
+			height: 25px;
+			background-color: #4267b2;
+			border: 1px solid #29487d;
+			color: white;
+			font-size: 13px;
+		}
+		.wallheader input:hover {
+			background-color: #3b5998;
+		}
+.bodyContainer {
+	margin-top: 20px;
+	width: 500px;
+	background-color: white;
+}
+	.bodyContainer .messageTitle {
+		color: #4267b2;
+		margin-left: 20px;
+		padding-top: 10px;
+		text-decoration: underline;
+	}
+		.bodyContainer textarea {
+			margin: 0px 20px 0px 20px;
+			width: 460px;
+			resize: none;
+		}
+		.bodyContainer label {
+			margin-left: 365px;
+		}
+		.bodyContainer .author {
+			color: #3b5998;
+			font-weight: bold;
+			margin-left: 10px;
+			display: inline-block;
+		}
+		.bodyContainer .message {
+			margin-left: 20px;
+		}
+		.bodyContainer .postBtn {
+			padding: 2px 5px;
+			text-align: center;
+			margin-top: 16px;
+			margin-right: 15px;
+			height: 25px;
+			background-color: #4267b2;
+			border: 1px solid #29487d;
+			color: white;
+			font-size: 13px;
+		}
+		.bodyContainer .postBtn:hover {
+			background-color: #3b5998;
+		}
+		.bodyContainer .deleteBtnContainer {
+			display: inline-block;
+		}
+			.bodyContainer .deleteBtn {
+				display: inline-block;
+				font-size: 10px;
+				padding: 2px 5px;
+				margin-left: 20px;
+				margin-bottom: 10px;
+				background-color: #ff8533;
+				border: 1px solid #cc5200 ;
+				color: white;
+				border: none;
+			}
+				.deleteError {
+					margin-left: 20px;
+					font-size: 10px;
+					font-weight: bold;
+					color: red;
+				}
+			.bodyContainer .deleteBtn:hover {
+				background-color: 	#e65c00;
+			}
+	.bodyContainer .comments {
+		font-size: 12px;
+		margin-left: 20px;
+	}
+		.bodyContainer .comment {
+			margin-left: 10px;
+		}
+	.bodyContainer .commentsTitle {
+		margin-left: 40px;
+		color: #4267b2;
+		text-decoration: underline;
+	}
+	.commentInput {
+
+	}
+		.commentInput textarea {
+			width: 440px;
+			margin: 0px 0px 0px 40px;
+		}
+
+/*profile.html*/
+.profileContainer h2 {
+	color: #4267b2;
+	text-align: center;
+	padding-top: 20px;
+}
+.profileContainer p {
+	margin-left: 10%;
+}

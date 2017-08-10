@@ -1,0 +1,22 @@
+{% load static %}
+
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Email Validations</title>
+  <link rel='stylesheet' href="{% static 'coursing/styles.css' %}">
+</head>
+<body>
+  <h1> The email address you entered ({{your_email}}) is VALID</h1>
+  <h3>Email Addresses Entered:
+    <table>
+        {% for email in emails %}
+      <tr>
+        <td>{{ email.email }}<td>
+        <td>{{email.created_at}}</td>
+        <td><a href='/emails/{{email.id}}/delete'>Delete</a></td>
+      </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<html>
+    <head>
+       <title>Form Test Index</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+      <div id ="div">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+              <p id = "flash">{{message}}</p>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+        <form action='/result' method='post'>
+          Your Name: <input type='text' name='name'>
+          <p>Favorite Location:</p>
+          <select name='location'>
+            <option value ="Amsterdam">Amsterdam</option>
+            <option value ="Santorini">Santorini</option>
+            <option value ="Madrid">Madrid</option>
+            <option value ="Interlaken">Interlaken</option>
+          </select>
+          <p>Favorite Language:</p>
+          <select name="language">
+            <option value="Spanish">Spanish</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Korean">Korean</option>
+            <option value="French">French</option>
+          </select>
+          <p>Comment (optional):</p>
+          <textarea name="optional"></textarea>
+          <input type="hidden" name="test" value="testing">
+          <input type='submit' value='Submit'>
+        </form>
+      </div>
+    </body>
+</html>

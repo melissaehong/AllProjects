@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Registration Form</title>
+  <meta charset="utf-8">
+  <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='style.css') }}'>
+</head>
+<body>
+  <br>First Name: {{ session['firstname'] }}
+  <br>Last Name: {{ session['lastname']}}
+  <br>Email: {{ session['email'] }}
+  <br>Password: {{ session['password'] }}
+  <br><a href="/"><button>Return to Registration</button></a>
+</body>
+</html>

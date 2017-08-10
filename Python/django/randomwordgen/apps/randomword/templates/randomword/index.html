@@ -1,0 +1,13 @@
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+</head>
+<body>
+  <h1>Random Word(Attempt # {{request.session.attempt}})</h1>
+  <form action = '/new_number' method='post'>
+    {% csrf_token %}
+    {{request.session.number}}
+    <input type='submit' value='Generate'>
+  </form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load staticfiles %}
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="{% static 'app/css/styleme.css' %}">
+  </head>
+  <body>
+    <div id = 'container'>
+          <h1 id = 'h1'>Ninja Gold</h1>
+      <div id = 'top'>
+        Your Gold:
+        <div id = 'gold'>
+          &nbsp;{{request.session.gold}}
+        </div>
+        <div>
+          <a href = '/reset'>Reset</a>
+        </div>
+      </div>
+      <p>
+      <div id = 'center'>
+        <div class = 'building'>
+          <h1>Farm</h1>
+          <p>(Earns 10-20 Gold)</p>
+          <form action = '/process_money' method = 'post'>
+             {% csrf_token %}
+             <input type = 'hidden' name = 'building' value = 'farm'>
+            <input class='btn btn-warning' type = 'submit' value = 'Find Gold!'>
+          </form>
+        </div>
+        <div class = 'building'>
+          <h1>Cave</h1>
+          <p>(Earns 5-10 Gold)</p>
+          <form action = '/process_money' method = 'post'>
+             {% csrf_token %}
+             <input type = 'hidden' name = 'building' value = 'cave'>
+            <input class='btn btn-warning' type = 'submit' value = 'Find Gold!'>
+          </form>
+        </div>
+        <div class = 'building'>
+          <h1>House</h1>
+          <p>(Earns 2-5 Gold)</p>
+          <form action = '/process_money' method = 'post'>
+             {% csrf_token %}
+             <input type = 'hidden' name = 'building' value = 'house'>
+            <input class='btn btn-warning' type = 'submit' value = 'Find Gold!'>
+          </form>
+        </div>
+        <div class = 'building'>
+          <h1>Casino</h1>
+          <p>(Earns/Takes 0-50 Gold)</p>
+          <form action = '/process_money' method = 'post'>
+             {% csrf_token %}
+             <input type = 'hidden' name = 'building' value = 'casino'>
+            <input class='btn btn-warning' type = 'submit' value = 'Find Gold!'>
+          </form>
+        </div>
+      <div id = 'bottom'>
+        <div id = 'activities'>
+          Activities:
+          {% for comment in request.session.comments %}
+              <span class = "{{comment.style}}">{{comment.comment}}</span><br>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

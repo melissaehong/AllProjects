@@ -1,0 +1,19 @@
+{% load static %}
+
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Email Validations</title>
+  <link rel='stylesheet' href="{% static 'emailvalid/styles.css' %}">
+</head>
+<body>
+  {% for error in request.session.errors %}
+    <p>{{error}}</p>
+  {% endfor %}
+  <form action='/process' method='post'>
+    {% csrf_token %}
+    Email Address: <input type='text' name='email'>
+    <input type='submit' value='Submit'>
+  </form>
+</body>
+</html>

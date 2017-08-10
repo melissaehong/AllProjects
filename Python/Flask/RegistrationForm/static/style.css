@@ -1,0 +1,14 @@
+*{
+  margin:auto;
+  padding:auto;
+}
+
+#container{
+  text-align:center;
+  padding:10px;
+}
+
+input{
+  margin-bottom:10px;
+  display:block;
+}

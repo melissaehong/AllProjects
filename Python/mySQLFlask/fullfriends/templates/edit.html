@@ -1,0 +1,16 @@
+<HTML LANG = ENG>
+<HEAD>
+  <meta charset = 'utf-8'>
+  <title>Full Friends</title>
+</HEAD>
+<BODY>
+  <div>
+    <form action = "/friends/{{friend.id}}" method = "post">
+      <label for="first_name">First Name:<input type="text" name="first_name" value={{friend.first_name}}></label>
+      <label for="last_name">Last Name:<input type="text" name="last_name" value={{friend.last_name}} ></label>
+      <label for="email">Email:<input type="text" name="email" value={{friend.email}}></label>
+      <input type="submit" value="Update Friend">
+    </form>
+  </div>
+</BODY>
+</HTML>

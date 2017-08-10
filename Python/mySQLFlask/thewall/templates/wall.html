@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'>
+	<meta name='description' content='This is the Wall!'>
+	<title>TheWall</title>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+	<link rel='stylesheet' type='text/css' href='{{ url_for("static", filename="styles/style.css") }}'>
+</head>
+<body>
+	<div id='container'>
+		<div class='wallHeader'>
+			<img src='{{ url_for("static", filename="images/logo.png") }}' alt='the logo'>
+			<h3>TheWall</h3>
+			<form action='/logout'>
+				<input type='submit' value='Log Off'>
+			</form>
+			<form action='/profile'>
+				<input type='submit' value='Profile'>
+			</form>
+			<h4>Hello {{ session['user']['first_name'] }}</h4>
+		</div>
+		<div class='bodyContainer'>
+			<h4 class='messageTitle'>Post a Message</h4>
+			<form class='messageInput' action='/message' method='POST'>
+				<textarea name='message' placeholder="What's on your mind?"></textarea>
+				<label>
+					<input class='postBtn' type='submit' value='Post a message'>
+				</label>
+			</form>
+			{% if session['message'] %}
+				{% for message in session['message'] %}
+					<hr>
+					<div class='messages'>
+						<!-- Displays message's author -->
+						<p class='author'>{{ message['first_name'] }} {{ message['last_name'] }} - {{ message['created_at'].strftime('%B %d %Y - %H:%M %p') }}</p>
+						<!-- Displays a delete message button -->
+						{% if message['user_id'] == session['user']['id'] %}
+							<form class='deleteBtnContainer' action='/delete_message' method='POST'>
+								<input class='deleteBtn' type='submit' value='Delete Message'>
+								<input type='hidden' name='message_id' value='{{ message["id"] }}'>
+							</form>
+						{% endif %}
+						<!-- Displays the message -->
+						<p class='message'><b>{{ message['message'] }}</b></p>
+						<hr>
+						<!-- Displays comments on the message  -->
+						{% if session['comment'] %}
+							{% for comment in session['comment'] %}
+								{% if message['id'] == comment['message_id'] %}
+								<div class='comments'>
+									<!-- Displays comment's author -->
+									<p class='author'>{{ comment['first_name'] }} {{ comment['last_name'] }} - {{ comment['created_at'].strftime('%B %d %Y - %H:%M %p') }}</p>
+									<!-- Displays a delete comment button -->
+									{% if comment['user_id'] == session['user']['id'] %}
+										<form class='deleteBtnContainer' action='/delete_comment' method='POST'>
+											<input class='deleteBtn' type='submit' value='Delete Comment'>
+											<input type='hidden' name='comment_id' value='{{ comment["id"] }}'>
+										</form>
+									{% endif %}
+									<!-- Displays the comment -->
+									<p class='comment'>{{ comment['comment'] }}</p>
+								</div>
+								{% endif %}
+							{% endfor %}
+						{% endif %}
+						<hr>
+						<h4 class='commentsTitle'>Post a Comment</h4>
+						<form class='commentInput' action='/comment' method='POST'>
+							<textarea name='comment' placeholder='Got something to say?'></textarea>
+							<!-- Captures the all important message_id -->
+							<input type='hidden' name='message_id' value='{{ message["id"] }}'>
+							<label>
+								<input class='postBtn' type='submit' value='Post a comment'>
+							</label>
+						</form>
+					</div> <!-- Closing for messages -->
+				{% endfor %}
+			{% endif %}
+		</div> <!-- Closing for bodyContainer -->
+	</div> <!-- Closing for container -->
+</body>
+</html>

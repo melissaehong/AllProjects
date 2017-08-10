@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang = 'en'>
+<head>
+  <meta charset='utf-8'>
+  <script type = "text/javascript">
+
+//Chapter 1 Page 16
+
+  function setswap(){
+  var myNumber = 42;
+  var myName = "Melissa";
+  var temp = myNumber;
+  myNumber = myName;
+  myName = temp;
+  console.log(myNumber);
+  console.log (myName);
+  }
+
+  //setswap();
+
+  function printNum(){
+    for (var i = -52; i < 1067; i++) {
+      console.log(i);
+    }
+  }
+
+  //printNum();
+
+  function beCheerful(){
+    for (var i = 1; i < 99; i++){
+    console.log("Good morning!");
+    }
+  }
+
+  //beCheerful();
+
+  function multThree(){
+    for (var i = -300; i < 1; i++){
+      if (i === -3 || i === -6){
+        continue;
+      }
+      console.log(i);
+    }
+  }
+
+  //multThree();
+
+  function printWhile(){
+    var i = 2000;
+    while(i < 5281){
+      console.log(i);
+      i = i + 1;
+    }
+  }
+
+  //printWhile();
+
+  function birthday(num1, num2){
+    if (num1 === 17 && num2 === 3){
+      console.log("How did you know?");
+    }
+    else if (num1 === 3 && num2 === 17){
+      console.log("How did you know?");
+    }
+    else {
+      console.log("Just another day...");
+      }
+  }
+
+  //birthday(17, 3);
+
+  function leapYear(year){
+    if (year % 4 === 0 && year % 100 != 0){
+      year = true;
+    }
+    else if (year % 400 === 0){
+      year = true;
+    }
+    else{
+      year = false;
+    }
+    console.log(year);
+    }
+
+    //leapYear(1000);
+
+  function mult5(){
+    var count = 0;
+    for (var i = 512; i < 4096; i++){
+      if (i % 5 === 0){
+        console.log(i);
+        count++;
+      }
+     }
+     console.log(count);
+  }
+
+  //mult5();
+
+  function mult6(){
+    var i = 6;
+    while (i < 60001){
+      if (i % 6 === 0){
+        console.log(i);
+      }
+      i = i + 1;
+    }
+  }
+  //mult6();
+
+  function multsix(){
+    var i = 6;
+    while (i < 60001){
+      console.log(i);
+      i = i + 6;
+    }
+  }
+
+  //multsix();
+
+  function countDojo(){
+    for (var i = 1; i <101; i++){
+      if (i % 5 === 0 && i % 10 === 0){
+        console.log("Coding" + " Dojo");
+        }
+      else if (i % 5 === 0){
+          console.log("Coding");
+      }
+    }
+  }
+
+  //countDojo();
+
+var incoming = 'hi'
+function whatsinside(incoming){
+  console.log(incoming);
+}
+
+//whatsinside(incoming);
+
+function odd(){
+  for (var i = -300000; i < 300001; i ++){
+    var sum = 0;
+    if (i % 2 === 1){
+      sum += 1;
+    }
+    console.log(sum);
+  }
+}
+
+/*function huge(){
+  for (var i = -30; i < 30; i++){
+    var sum = 0;
+    if (i % 2 === 1){
+      sum += i-i;
+    }
+    console.log(sum);
+    }
+  }
+
+  huge();*/
+
+function countFour(){
+  var i = 2016;
+  while (i > 0){
+      console.log(i);
+    i = i - 4;
+    }
+  }
+
+//countFour();
+
+function countDownFours(lowNum, highNum, mult){
+  for (var i = highNum; i > lowNum; i--){
+    if (i % mult === 0){
+      console.log(i);
+    }
+  }
+}
+
+//countDownFours(2, 9, 3);
+
+function finalCountdown(param1, param2, param3, param4){
+  var i = param2;
+  while (i < param3){
+    if (i % param1 === 0){
+      console.log(i);
+    }
+    if (i % param1 === param4){
+      break;
+    }
+  }
+    i ++;
+  }
+  }
+
+finalCountdown(3, 5, 17, 9);
+
+//Chapter 1 Page 20
+
+function countDown(int){
+  var arr = [];
+  var count = 0;
+  for (var i = int; i > 0; i --){
+    arr[i] = i;
+    count ++;
+  }
+  console.log(arr);
+  return count;
+}
+
+function printReturn(num1, num2){
+    var arr = [num1, num2];
+    console.log(arr[0]);
+    return arr[1];
+  }
+
+function firstPlus(arr){
+  var sum = 0;
+  for (var i = 0; i < arr.length; i++){
+    sum += arr[i];
+  }
+  console.log(sum);
+  return arr.length;
+}
+
+function greaterSecond(){
+  arr = [1,3,5,7,9,13];
+  var count = 0;
+  for (var i = 0; i < arr.length; i ++){
+    if (arr[i] > arr[2]){
+      count++;
+      console.log(arr[i]);
+    }
+  }
+  return count;
+}
+
+function greaterSecondGen(arr){
+  var count = 0;
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i] > arr[2] && arr.length > 2){
+      count ++;
+      console.log(arr[i]);
+    }
+  }
+  return count;
+}
+
+function lengthValue(num1){
+  for (var num2 = 0; num2 < num1.length; num2 ++){
+    if (num1.length == num1[num2]){
+      console.log('Jinx!');
+    }
+    else{
+      console.log(num1.length);
+      console.log(num1[num2]);
+    }
+  }
+}
+
+function fitFirst(){
+
+}
+</script>
+</head>
+<body>
+</body>
+</html>

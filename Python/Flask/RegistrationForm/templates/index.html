@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Registration Form</title>
+  <meta charset="utf-8">
+  <link rel='stylesheet' type='text/css' href='{{ url_for('static', filename='style.css') }}'
+</head>
+<body>
+  <div id = "container">
+    <h1>Registration Form</h1>
+
+    <form action='/process' method='POST'>
+      First Name:
+      <input type="text" name="firstname">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <p>{{messages[0]['firstname']}}</p>
+        {% endif %}
+      {% endwith %}
+      Last Name:
+      <input type="text" name="lastname">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {{messages[0]['lastname']}}
+        {% endif %}
+      {% endwith %}
+      Email:
+      <input type="text" name="email">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {{messages[0]['email']}}
+        {% endif %}
+      {% endwith %}
+      Password:
+      <input type="password" name="password">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {{messages[0]['password']}}
+        {% endif %}
+      {% endwith %}
+      Confirm Password:
+      <input type="password" name="password1">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+*{
+  margin:auto;
+  padding:auto;
+}
+
+
+.Gained{
+  color:green;
+}
+
+.Lost{
+  color:red;
+}
+
+#container{
+  text-align:center;
+  width:1000px;
+  height:800px;
+}
+
+.top{
+  width:800px;
+  display:inline-block;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+.middle{
+  display:inline-block;
+}
+
+.middle div{
+  display:inline-block;
+  height:100px;
+  width:200px;
+  padding:10px;
+  margin:10px;
+  padding-top:50px;
+  border:1px solid black;
+  vertical-align: bottom;
+  text-align: center;
+}
+
+.bottom{
+  display:inline-block;
+}
+
+.bottom textarea{
+  width:800px;
+}
+
+body{
+  background-color:lavender;
+}

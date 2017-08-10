@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>These are all my friends!</h1>
+    <!-- with all the data we can then construct a more structured output -->
+    <table style = 'width:50%'>
+      <tr>
+        <th>First Name:</th>
+        <th>Last Name:</th>
+        <th>Email:</th>
+        <th>Actions:</th>
+      </tr>
+      <tr>
+        {% for friend in friends: %}
+        <!--a table showing database of friends-->
+        <td>{{ friend['first_name'] }}</td>
+        <td>{{ friend['last_name'] }}</td>
+        <td>{{ friend['email' ]}}</td>
+        <td><form action = "/friends/{{friend.id}}/edit" method = 'get'>
+            <input type = 'submit' value = 'edit'>
+           </form><form action = "/friends/{{friend.id}}/delete" method = 'post'>
+            <input type = 'submit' value = 'delete'>
+          </form>
+      </tr>
+      {% endfor %}
+    </table>
+    <br>
+
+    <p>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    <p>
+    <!--form to add friend-->
+    <form action = '/friends' method = 'post'>
+      First Name: <input type = 'text' name = 'first_name'>
+      Last Name: <input type = 'text' name = 'last_name'>
+      Email: <input type = 'text' name = 'email'>
+      <input type = 'submit' value = 'Add Friend'>
+    </form>
+
+  </body>
+</html>

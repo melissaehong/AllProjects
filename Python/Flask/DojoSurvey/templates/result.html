@@ -1,0 +1,17 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div id="div">
+    <p><u>Submitted Info:</u></p>
+
+    Name: {{ session['name'] }}
+    <p>Favorite Location: {{ session['location'] }} </p>
+    <p>Favorite Language: {{ session['language'] }} </p>
+    <p>Comment: {{ session['optional'] }} </p>
+    <a href="index.html">
+    <p><button>Back Home</button></a></p>
+  </div>
+</body>
+</html>

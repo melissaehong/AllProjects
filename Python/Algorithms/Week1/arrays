@@ -1,0 +1,217 @@
+Arrays Day 1
+
+From your work with the Basic 13 challenges, we assume that you already know how to read from numerical arrays, and that you can easily create JavaScript functions to get the minimum or maximum value, the sum of all values in the array, or the average of all values in the array. If this is not the case, definitely review those implementations before continuing to today’s challenges.
+
+Here are the challenges for today:
+
+Push Front
+
+Given array and an additional value, insert this value at the beginning of the array.
+
+Pop Front
+
+Given array, remove and return the value at the beginning of the array. Do this without using any built-in array methods except pop().
+
+Insert At
+
+Given array, index, and additional value, insert the value into array at given index. You can think of PushFront(arr,val) as equivalent to InsertAt(arr,0,val).
+
+Arrays Day 2
+
+Remove At
+
+Given array and an index into array, remove and return the array value at that index. Do this without using built-in array methods except pop(). Think of PopFront(arr) as equivalent to RemoveAt(arr,0).
+
+Swap Array Pairs
+
+Swap positions of successive pairs of values of given array. If length is odd, do not change final element. For [1,2,3,4], return [2,1,4,3]. For [false,true,42], return [true,false,42].
+
+Array Remove Duplicates
+
+Sara is looking to hire an awesome web developer and has received applications from various sources. Her assistant alphabetized them but noticed some duplicates. Given a sorted array, remove duplicate values. Because array elements are already in order, all duplicate values will be grouped together.
+
+Arrays Day 3
+
+Reverse array
+
+Given a numerical array, reverse the order of the values. The reversed array should have the same length, with existing elements moved to other indices so that the order of elements is reversed.
+
+BONUS: Don’t use a second array – move the values around within the array that you are given.
+
+Array Min to Front
+
+Given an array of comparable values, move the lowest element to the array’s front, shifting backward elements that previously were ahead of it. Change [4,2,1,3,5] to [1,4,2,3,5].
+
+Arrays Day 4
+
+Skyline Heights
+
+From lovely Burbank you have a breathtaking view of the Los Angeles skyline. Let’s say you are given an array with heights of consecutive buildings, starting closest to you and extending directly away. Array [-1,7,3] would represent three buildings: first is actually out of view below street level, behind it is second at 7 stories high, third is 3 stories high (hidden behind the 7-story). You are situated at street level. Return array containing heights of buildings you can see, in order. Given [1,-1,7,3] return [1,7].
+
+Filter Range
+
+Alan is good at breaking secret codes. One tool is to eliminate numbers he knows are outside a certain specific range. Given array and values min and max, remove array values outside min and max. Work in-place: return the array you are given, with values in original order. No built-in array functions.
+
+Strings Day 1
+
+Strings are arrays of characters (more accurately, you can read individual characters the same way you read specific values in a numerical array, and these individual values are strings of length 1). However, you cannot write individual characters in a string in this same way. Once a string is defined, individual characters can be referenced by [ ] but not changed. Strings are immutable: they can be completely replaced in their entirety, but not changed piecewise. To manipulate string characters, you must split the string to an array, make individual changes, then join it.
+
+For the following, feel free to use any of the following built-in functions (not required though!): split, join, concat (look up how to use them in the MDN Documentation).
+
+Remove blanks
+
+Create a function that, given a string, returns a string without blanks. Given " play that Funky Music ", returns a string containing "playthatFunkyMusic".
+
+Acronyms
+
+Create a function that, given a string, returns the string’s acronym (first letters only, capitalized). Given " there's no free lunch - gotta pay yer way. ", return "TNFL-GPYW". Given "Live from New York, it's Saturday Night!", return "LFNYISN". The built-in toUpperCase method might be useful here...
+
+Strings Day 2
+
+Is Palindrome
+
+Strings like "Able was I, ere I saw Elba" or "Madam, I'm Adam" could be considered palindromes, because (if we ignore spaces, punctuation and capitalization) the letters are the same from back to front. Create a function that returns a boolean indicating whether the string is a strict palindrome. For "a x a" or "racecar", return true. Do not ignore spaces, punctuation and capitalization: if given "Dud" or "oho!", return false.
+
+Next, ignore white space (spaces, tabs, returns), capitalization and punctuation.
+
+Strings Day 3
+
+Book Index
+
+Martin is writing his opus: a book of algorithm challenges, set as lyrics to a suite of baroque fugues. He knows that some of those fugueing challenges will be less popular than others, so he needs a book index. Given a sorted array of pages, produce a book index string. Consecutive pages should form ranges separated by a dash. For [1,3,4,5,7,8,10], return the string "1, 3-5, 7-8, 10".
+
+Strings Day 4
+
+Parens Valid
+
+Create a function that, given an input string str, returns a boolean whether parentheses in str are valid. Valid sets of parentheses always open before they close, for example. For "Y(3(p)p(3)r)s", return true. Given "N(0(p)3", return false: not every parenthesis is closed. Given "N(0)t )0(k", return false.
+
+
+Joining objects
+
+This is an excellent challenge to get you ready for database concepts!
+
+You have three arrays with objects inside them:
+
+Each object in the users array looks like the following:
+
+{
+  id: 'a unique number',
+  first_name: 'a first name',
+  last_name: 'a last name',
+  created_at:'datetime',
+  updated_at:'datetime'
+}
+A second books array has the following structure:
+
+{
+  id: 'a unique number',
+  book_title: 'a title',
+  book_subject: 'a description',
+  created_at:'datetime',
+  updated_at:'datetime'
+}
+And a final usersHaveBooks array looks like so:
+
+{
+  id:'a unique number',
+  user_id:'a number that exists in the id column of the users array',
+  book_id:'a number that exists in the id column of books array',
+  created_at:'datetime',
+  updated_at:'datetime'
+}
+Your tasks:
+
+Write a function innerJoin that uses the three provided arrays to return a new array, where each element is also an array containing three objects, one each pulled from users, books and usersHaveBooks. Here's the catch: The user object's id property must match the user_id property of the usersHaveBooks object, and the book object's id property must match the book_id property of the usersHaveBooks object.
+Write a function called leftJoin that accepts three arrays. All the objects in whichever array is passed as the first argument should be represented in the final output array.
+Feel free to copy the following dummy data:
+
+var users = [
+  {
+  id: 1,
+  first_name: 'Johnny',
+  last_name: 'Rotten',
+  created_at:'2012-12-31 23:59:59',
+  updated_at:'2012-12-31 23:59:59'
+  },
+  {
+  id: 2,
+  first_name: 'Amy',
+  last_name: 'Brown',
+  created_at:'2012-12-31 23:59:59',
+  updated_at:'2012-12-31 23:59:59'
+  },
+  {
+  id: 3,
+  first_name: 'Alice',
+  last_name: 'Roh',
+  created_at:'2012-12-31 23:59:59',
+  updated_at:'2012-12-31 23:59:59'
+  },
+
+]
+
+var usersHaveBooks = [
+  {
+    id:1,
+    user_id:1,
+    book_id:1,
+    created_at:'2012-12-31 23:59:59',
+    updated_at:'2012-12-31 23:59:59'
+  },
+  {
+    id:1,
+    user_id:1,
+    book_id:2,
+    created_at:'2012-12-31 23:59:59',
+    updated_at:'2012-12-31 23:59:59'
+  },
+  {
+    id:1,
+    user_id:1,
+    book_id:3,
+    created_at:'2012-12-31 23:59:59',
+    updated_at:'2012-12-31 23:59:59'
+  },
+  {
+    id:1,
+    user_id:2,
+    book_id:2,
+    created_at:'2012-12-31 23:59:59',
+    updated_at:'2012-12-31 23:59:59'
+  },
+
+]
+
+var books = [
+  {
+  id: 1,
+  book_title: 'Grapes of Wrath',
+  book_subject: 'The hard life during the depression',
+  created_at:'2012-12-31 23:59:59',
+  updated_at:'2012-12-31 23:59:59'
+  },
+  {
+  id: 2,
+  book_title: 'Metamorphosis',
+  book_subject: 'The degradation of humanity, reflected in a single man',
+  created_at:'2015-01-12 23:59:59',
+  updated_at:'2015-01-12 23:59:59'
+  },
+  {
+  id: 3,
+  book_title: 'The Coming Plague',
+  book_subject: 'Infectious diseases',
+  created_at:'2015-01-12 23:59:59',
+  updated_at:'2015-01-12 23:59:59'
+  },
+]
+
+Zip Arrays into Map
+
+Associative arrays are sometimes called maps because a key (string) maps to a value. Given two arrays, create an associative array (map) containing keys of the first, and values of the second. For arr1 = ["abc", 3, "yo"] and arr2 = [42, "wassup", true], return {"abc": 42, 3: "wassup", "yo": true}.
+
+Most Repeated Character
+
+Given a string, return the character that's used most often, along with the number of times it's repeated.
+Contact GitHub API Training Shop Blog About

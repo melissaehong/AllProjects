@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset="utf-8">
+  <title>Ninja Gold</title>
+  <link rel = "stylesheet" type = "text/css" href="{{ url_for('static', filename='css/styleninja.css') }}">
+</head>
+<body>
+  <div id = "container"><h1>Welcome to Ninja Gold!</h1>
+    <div class = "top">
+      <p>Your Gold:
+        {{session['gold']}}
+      <a href="/reset">Reset</a>
+    </div>
+    <div class = "middle">
+      <div id = "farm">
+        <p>Farm:</p>
+        <p>(Earns 10-20 golds)</p>
+        <form action = '/process_money' method = 'post'>
+          <input type="hidden" name="building" value="farm" />
+          <input type = 'submit' value = 'Get Gold!'/>
+        </form>
+      </div>
+      <div id = "cave">
+        <p>Cave:</p>
+        <p>(Earns 10-20 golds)</p>
+        <form action = '/process_money' method = 'post'>
+          <input type="hidden" name="building" value="cave" />
+          <input type = 'submit' value = 'Get Gold!'/>
+        </form>
+      </div>
+      <div id ="house">
+        <p>House:</p>
+        <p>(Earns 2-5 golds)</p>
+        <form action = '/process_money' method = 'post'>
+          <input type="hidden" name="building" value="house" />
+          <input type = 'submit' value = 'Get Gold!'/>
+        </form>
+      </div>
+      <div id = "casino">
+        <p>Casino:</p>
+        <p>(Earns/Takes 0-50 golds)</p>
+        <form action = '/process_money' method = 'post'>
+          <input type="hidden" name="building" value="casino" />
+          <input type= 'submit' value = 'Get Gold!'/>
+        </form>
+      </div>
+    </div>
+    <div class = "bottom">
+      {% for comment in session['comments'] %}
+          <p class = "{{comment['style']}}">{{comment['comment']}}</p>
+        {% endfor %}
+      </div>
+  </div>
+</body>
+</html>

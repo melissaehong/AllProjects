@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AJAX NOTES</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      $('form').submit(function(){
+        $.post($(this).attr('action'), $(this).serialize(), function(notes){
+          console.log(notes);
+          $('#notes').html(notes);
+          $('input[type="text"]').val("");
+        }, 'html');
+        return false;
+      });
+      $('#notes').on('focusout','textarea', function(){
+        console.log(this);
+        console.log($(this).parent());
+        $.post($(this).parent().attr('action'), $(this).serialize($(this).val()), function(notes){
+          $('#notes').html(notes);
+        }, 'html');
+      });
+      $('#notes').on('submit', 'form', function(){
+        $.get($(this).attr('action'), function(notes){
+          $('#notes').html(notes);
+        }, 'html');
+        return false;
+      })
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h3>Notes</h3>
+    <hr>
+    <div id="notes"></div>
+    <form action="/notes/create" method="post">
+      <div class="row">
+        <div class="three columns">
+          <input class="u-full-width" type="text" name="title" placeholder="Note Title...">
+          <input class="button-primary" type="submit" value="Add Note">
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>s

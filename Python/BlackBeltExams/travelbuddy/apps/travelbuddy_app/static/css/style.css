@@ -1,0 +1,17 @@
+*{
+
+}
+
+body{
+  background-color:purple;
+}
+
+form{
+  padding:10px;
+  margin-left:10px;
+}
+
+form input{
+  padding:5px;
+  margin:10px;
+}

@@ -1,0 +1,41 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Products</title>
+    <link rel="stylesheet" href="{% static 'products_app/css/styles.css' %}">
+  </head>
+  <body>
+    <h1>Products</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in products %}
+        <tr>
+          <td>{{product.name}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.price}}</td>
+          <td>
+            <a href="/products/{{product.id}}/">Show</a>
+            <a href="/products/{{product.id}}/edit/">Edit</a>
+            <form action="/products/{{product.id}}/destroy/" method='post' class='delete'>
+              {% csrf_token %}
+              <input type="submit" value="Remove">
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="/products/new">Add a new product</a>
+  </body>
+</html>
+Privacy Policy

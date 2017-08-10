@@ -1,0 +1,9 @@
+Things to do:
+1. get index and css up
+2. logic
+  -forms to /process_money
+  -sessions to index.html
+  -reset
+  -activities - show in the list
+  -gold accumulation to gold total
+  -add/subtract gold

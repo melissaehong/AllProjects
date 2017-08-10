@@ -1,0 +1,21 @@
+#back{
+	display: none;
+}
+input, textarea{
+	display: block;
+}
+
+#left, #right{
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px;
+}
+
+#card{
+	width: 150px;
+	height: 75px;
+	text-align: center;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: 5px 0;
+}

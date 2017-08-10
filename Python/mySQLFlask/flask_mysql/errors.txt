@@ -1,0 +1,8 @@
+(1045, "Access denied for user 'melissa'@'localhost' (using password: YES)")
+-add a user name
+(1045, "Access denied for user 'root'@'localhost' (using password: NO)")
+-add a password
+NameError: global name 'db1' is not defined
+-define db1
+(2003, "Can't connect to MySQL server on '127.0.0.1' (61)")
+-find the right port

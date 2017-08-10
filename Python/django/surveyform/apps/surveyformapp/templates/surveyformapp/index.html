@@ -1,0 +1,33 @@
+<html>
+<head>
+  <title>Survey Form</title>
+
+</head>
+<body>
+  <div id = 'container'>
+  <form action = '/survey/process' method='post'>
+    {% csrf_token %}
+    <p>Your Name: <input type="text" name='name'></p>
+    Favorite Location:
+    <select name = 'location'>
+      <option value ="Amsterdam">Amsterdam</option>
+      <option value ="Santorini">Santorini</option>
+      <option value ="Madrid">Madrid</option>
+      <option value ="Interlaken">Interlaken</option>
+    </select>
+    <p>Favorite Language:
+    <select name = "language">
+      <option value="Spanish">Spanish</option>
+      <option value="Dutch">Dutch</option>
+      <option value="Korean">Korean</option>
+      <option value="French">French</option>
+    </select>
+    </p>
+    <p>Comment (optional):</p>
+    <textarea name="optional"></textarea>
+    <input type="hidden" name="test" value="testing">
+    <input type='submit' value='Submit'>
+  </form>
+  </div>
+</body>
+</html>

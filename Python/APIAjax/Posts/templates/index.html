@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset = 'utf-8'>
+  <title>Posts</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style_sheet.css') }}">
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('form').submit(function(){
+        $.post('/posts/create', $(this).serialize(), function(data){
+          $('#posts').html(data);
+        });
+        return false;
+      });
+      $('#get_all_button').click(function(){
+      $.get('/posts/index_html', function(data){
+        $('#posts').html(data);
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <div id = "container">
+    <h1>My Posts</h1>
+    <form action = "/posts/create" method ="post">
+      <textarea name="description"></textarea>
+      <input type="submit" value="Add Post">
+    </form>
+    <button id = "get_all_button">Get All Posts</button>
+    <div id = "posts">
+    </div>
+  </div>
+</body>
+</html>

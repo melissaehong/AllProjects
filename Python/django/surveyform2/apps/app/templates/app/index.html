@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+    <link rel='stylesheet' href="{% static 'app/css/styles1.css' %}">
+    <title></title>
+  </head>
+  <body>
+    <div id = 'container'>
+    <h1>Please Fill Out This Form</h1>
+    <form action = '/process' method = 'post'>
+      {% csrf_token %}
+      Your Name: <input type = 'text' name = 'name'>
+      <br>Dojo Location: <select name = 'location'>
+        <option value = 'Seattle'>Seattle</option>
+        <option value = 'SF'>SF</option>
+        <option value = 'San Diego'>San Diego<option>
+      </select>
+      <br>Favorite Language: <select name = 'language'>
+        <option value = 'Python'>Python</option>
+        <option value = 'Javascript'>Javascript</option>
+        <option value = 'Ruby'>Ruby</option>
+      </select>
+      <br>Comment (optional):<textarea name = 'comment'></textarea>
+      <input type = 'submit' value = 'Submit'>
+    </form>
+  </div>
+  </body>
+</html>

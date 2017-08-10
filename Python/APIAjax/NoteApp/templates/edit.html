@@ -1,0 +1,15 @@
+<HTML LANG = 'EN'>
+<HEAD>
+  <meta charset = 'utf-8'>
+  <title>Notes</title>
+</HEAD>
+<BODY>
+  <div>
+    <form action = "/notes/{{note.id}}" method = "post">
+      <label for="title">Title:<input type="text" name="title" value={{note.title}}></label>
+      <label for="description"><textarea name="description" value={{note.description}} ></textarea></label>
+      <input type="submit" value="Update Note">
+    </form>
+  </div>
+</BODY>
+</HTML>

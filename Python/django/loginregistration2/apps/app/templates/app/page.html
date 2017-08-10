@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load staticfiles %}
+  </head>
+  <body>
+    <h1>Success!</h1>
+      {% for success in request.session.success %}
+      {{ success }}<br>
+      {% endfor %}
+
+      Success!  Welcome, {{request.session.user.first_name}}!  You've successfully logged in! :)
+      <a href = '/logout'>Log Out </a>
+    <p>
+    {% for user in users %}
+    {{ user.first_name }}
+    <a href = '{{user.id}}/delete'>Delete</a><br>
+    {% endfor %}
+  </body>
+</html>

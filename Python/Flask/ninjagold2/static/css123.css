@@ -1,0 +1,30 @@
+.bottom{
+  display: inline-block;
+}
+
+#yourgold{
+  width: 200px;
+  height: 25px;
+  background-color: gold;
+  border: 1px solid black;
+  padding-left:5px;
+  display:inline-block;
+}
+
+.building{
+  background-color: lavender;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  padding-top: 10px;
+  display:inline-block;
+  border: 1px solid black;
+}
+
+.Gained{
+  color:green;
+}
+
+.Lost{
+  color:red;
+}

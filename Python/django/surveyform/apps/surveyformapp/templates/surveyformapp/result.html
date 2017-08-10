@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Results</title>
+</head>
+<body>
+  <p>Thanks for submitting this form!  You have submitted this form {{request.session.attempt}} times now.
+  </p>
+  <p>
+  Submitted Information:
+  </p>
+  <br>
+  Name: {{request.session.name}}
+  <br>
+  Favorite Location: {{request.session.location}}
+  <br>
+  Favorite Language: {{request.session.language}}
+  <br>
+  Comment: {{request.session.optional}}
+</body>
+</html>

@@ -1,0 +1,5 @@
+Open MySQL Workbench
+Click + sign on MySQL Connections
+Provide a Connection Name
+Choose Port
+Then click OK

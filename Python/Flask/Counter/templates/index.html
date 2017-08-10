@@ -1,0 +1,14 @@
+<html lang = "en">
+    <head>
+      <meta charset="utf-8">
+       <title>Counter</title>
+    </head>
+    <body>
+      <h1>Index Page</h1>
+      <h2>Counter:</h2>
+      <p>{{ session['count'] }}</p>
+      <form action = "/reset" method = "post">
+        <input type = "submit" value = "Reset Counter" name = "counter">
+      </form>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+				//Extract values from input fields
+				var first = $("#first").val();
+				var last = $("#last").val();
+				var desc = $("textarea").val();
+				//Append dynamically created div to DOM
+				$("#right").append("<div id = 'card'><p>" + first + " " + last+"</p><p id = 'back'> " + desc +"</p></div>");
+				//Clear form fields by setting their value to empty
+				$("#first").val("");
+				$("#last").val("");
+				$("#desc").val("");
+				//Return false to prevent refresh
+				return false;
+			});
+
+			$(document).on('click', '#card', function(){
+				//Toggle the #cards' childrens' display property
+				$(this).children().toggle();
+			});
+		});
+	</script>
+	<title>Contact Card</title>
+</head>
+<body>
+	<div id = "wrapper">
+		<div id ="left">
+			<form>
+				<label for="first">First Name:</label>
+				<input type ="text" name="first" id ="first">
+				<label for="last">Last Name:</label>
+				<input type ="text" name="last" id ="last">
+				<label for="desc">Description:</label>
+				<textarea id="desc"></textarea>
+				<button>Add User</button>
+			</form>
+		</div>
+		<div id ="right">
+		</div>
+	</div>
+
+</body>
+</html>

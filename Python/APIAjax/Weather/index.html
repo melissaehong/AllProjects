@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <title> Weather API </title>
+  <meta charset = 'utf-8'>
+  <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+        $('form').submit(function(){
+          console.log($('#city').val());
+          var city = $('#city').val();
+          var url = " http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=02a32302e35436e4d2279775fa4f812e&units=imperial";
+          console.log(url);
+
+          $.get(url, function(data){
+            console.log(data.main.temp);
+            $("#temperature").html("Temperature: " + data.main.temp)
+            $('#submitted_city').html(city)
+          }, 'json');
+
+          return false;
+        });
+
+    });
+  </script>
+</head>
+<body>
+  <form action = "#">
+    What's the weather like in..
+    <input type = "text" id = "city">
+    <input type = "submit" value = "Submit">
+  </form>
+  <h1 id = "submitted_city">No city chosen</h1>
+  <h4 id = "temperature">Temperature: N/A</h4>
+</body>
+</html>

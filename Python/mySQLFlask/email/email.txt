@@ -1,0 +1,20 @@
+Email validation with DB
+
+1. Database
+  -emails
+    -email
+    -created at
+2. Server
+  -"/" route
+  -"success" route
+    -save email to database
+    -display all email addresses entered
+    -edit email
+    -delete email
+  -flash
+    -email is not valid!
+    -the email address you entered(__) is a VALID email address!  Thank you!
+
+3. Front End
+  -index.html
+  -success.html

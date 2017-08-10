@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add new product</title>
+    <link rel="stylesheet" href="{% static 'products_app/css/styles.css' %}">
+  </head>
+  <body>
+    <h2>Add a new product</h2>
+    <form action="/products/" method='post'>
+      {% csrf_token %}
+      Name: <input type="text" name="name">
+      Description: <input type="text" name="description">
+      Price: <input type="float" name="price">
+      <input type="submit" value="Create">
+    </form>
+    <a href="/products">Go back</a>
+  </body>
+</html>

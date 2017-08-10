@@ -1,0 +1,41 @@
+SELECT
+SELECT * FROM countries
+
+INSERT
+INSERT INTO countries (code, name, continent, region) VALUES ('PET', 'Petoria', 'North America', 'North America')
+
+UPDATE
+UPDATE countries SET continent = 'Oceania' WHERE name = 'Petoria'
+
+DELETE
+DELETE FROM countries WHERE id=247; (name = 'Petoria' if in primary key)
+
+world
+  tables
+    countries
+
+Select * from world.countries;
+
+JOINS
+SELECT countries.name, languages.language
+FROM countries
+    JOIN languages ON countries.id = languages.country_id
+
+SELECT countries.name, languages.languages
+  FROM countries
+    JOIN languages ON countries.id = languages.country_id
+  WHERE countries.name = 'Italy';
+
+LEFT JOINS
+SELECT countries.name, languages.language
+FROM COUNTRIES
+    LEFT JOIN languages on countries.id = languages.country_id
+
+
+COUNT and DESC
+SELECT countries.name, languages.language, COUNT(languages.language AS languagecount)
+ORDER BY languages.language DESC;
+97
+88
+40
+10

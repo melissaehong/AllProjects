@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <title>Family Notes</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+   <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+  <div id = "container">
+    Notes
+    <hr>
+    <div id = "notes">
+    </div>
+    <hr>
+    <div id = "bottom">
+      <div class = "title">
+        <form class = "edit">
+          Python
+        </form>
+      </div>
+      <div class = "delete">
+        <form class = "formdelete">
+          delete
+        </form>
+      </div>
+      <div class = "info">
+        <form action="/notes/create" id="formcreate" method="post">
+          <textarea name="description" id="description">
+          "Enter description here..."
+          </textarea>
+          <br>
+          <input type = "text" name="title" value="Insert note title here..." id = "title">
+          <br>
+          <input type = "submit" value="Add Note">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

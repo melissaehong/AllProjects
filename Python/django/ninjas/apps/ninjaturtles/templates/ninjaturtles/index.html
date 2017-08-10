@@ -1,0 +1,18 @@
+<html>
+<head>
+</head>
+<body>
+  <h1>Ninjas!</h1>
+  {% load staticfiles %}
+       {% if image %}
+       <img src="{% static image %}" alt="" />
+       {% else %}
+
+     <img src="{% static 'ninjaturtles/donatello.jpg' %}" alt="" />
+     <img src="{% static 'ninjaturtles/leonardo.jpg' %}" alt="" />
+     <img src="{% static 'ninjaturtles/michelangelo.jpg' %}" alt="" />
+     <img src="{% static 'ninjaturtles/raphael.jpg' %}" alt="" />
+       {% endif %}
+     {{image}}
+</body>
+</html>

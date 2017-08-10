@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+<head>
+  <title>Login Registration</title>
+</head>
+<body>
+  <h1>Success! Welcome, {{ request.session.user.first_name }}!</h1>
+  You've successfully logged in!
+  <a href="/logout">Logout</a>
+</body>
+</html>
