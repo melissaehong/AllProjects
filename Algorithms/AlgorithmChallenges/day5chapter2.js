@@ -257,21 +257,65 @@ function messayMathMashup(num){
 //messayMathMashup(4);
 
 function twelveBarBlues(){
-
+  for (var i = 1; i <= 12; i++){
+    console.log(i);
+    console.log('chick');
+    console.log('boom');
+    console.log('chick');
+  }
 }
 
-function fibonacci(){
+//twelveBarBlues();
 
+  function fibonacci(num) {
+    if (num === 0) return 0;
+    if (num === 1) return 1;
+
+    return fibonacci(num - 1) + fibonacci(num - 2);
 }
 
-function sumOneDigit(){
+//console.log(fibonacci(0));
+//console.log(fibonacci(1));
+//console.log(fibonacci(2));
+//console.log(fibonacci(3));
+//console.log(fibonacci(4));
+//console.log(fibonacci(5));
 
+function sumOneDigit(n){
+  return console.log(1 + ((n-1) % 9));
 }
 
-function clockHandAngles(){
+sumOneDigit(11);
+sumOneDigit(110);
+sumOneDigit(7);
 
+function clockHandAngles(hour, minute){
+      var minAngle = 360*(minute/60);
+      var hourAngle = 360*(hour/12)+(360/12)*(minute/60);
+      console.log(minAngle);
+      console.log(hourAngle);
+      if(minAngle > hourAngle) {
+          return minAngle - hourAngle;
+      }
+      else {
+          return hourAngle - minAngle;
+      }
+  }
+  console.log(clockHandAngles(10,30));
+
+function isPrime(num){
+  var answer = true;
+  if (num === 1){
+    answer = true;
+  }
+  for (var i = 2; i < num; i++){
+    if(num%i === 0){
+      answer = false;
+    }
+  }
+  console.log(answer);
 }
 
-function isPrime(){
-
-}
+//isPrime(7);
+//isPrime(10);
+//isPrime(11);
