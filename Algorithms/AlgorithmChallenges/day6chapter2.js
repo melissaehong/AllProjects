@@ -234,13 +234,132 @@ function statisticsUntilDoubles(num){
 // avg
 //randomly returns integers between 1 and 20 inclusive
 
-statisticsUntilDoubles(20)
+//statisticsUntilDoubles(20)
 
 // done!!
-function claireIsWhere(){
+
+x = 10;
+y = 5;
+
+function xLocation(){
+  console.log(x);
+}
+
+function yLocation(){
+  console.log(y);
+}
+
+function moveBy(xOffset, yOffset){
+  x += xOffset;
+  y += yOffset;
+  return (x, y);
+}
+
+function reset(){
+  x = 0;
+  y = 0;
+}
+
+/*reset();
+xLocation();
+yLocation();
+moveBy(1,-2);
+moveBy(3,1);
+xLocation();
+yLocation();
+*/
+
+//date on a deserted island
+function weekdayName(weekdayNum){
+  // getting day of the week based on numbers 1 to 6; number 1 starting with "Sunday" and number 6 ending with "Saturday"
+  switch (weekdayNum){
+    case 1:
+      console.log("Sunday");
+      break;
+    case 2:
+      console.log("Monday")
+      break;
+    case 3:
+      console.log("Tuesday")
+      break;
+    case 4:
+      console.log("Wednesday")
+      break;
+    case 5:
+      console.log("Thursday")
+      break;
+    case 6:
+      console.log("Friday")
+      break;
+    case 7:
+      console.log("Saturday");
+      break;
+  }
+}
+
+function weekdayName2(weekdayNum){
+  // getting days of the week based on 365 days, starting with 1 = "Sunday" and 6 = "Saturday"
+  while (weekdayNum > 7){
+    (weekdayNum %= 7);
+  }
+  weekdayNum = Math.floor(weekdayNum);
+
+  switch (weekdayNum){
+    case 0:
+      console.log("Saturday");
+      break;
+    case 1:
+      console.log("Sunday");
+      break;
+    case 2:
+      console.log("Monday")
+      break;
+    case 3:
+      console.log("Tuesday")
+      break;
+    case 4:
+      console.log("Wednesday")
+      break;
+    case 5:
+      console.log("Thursday")
+      break;
+    case 6:
+      console.log("Friday")
+      break;
+    case 7:
+      console.log("Saturday");
+      break;
+  }
+}
+
+function someDays(){
+  for (var i = 0; i < 17; i ++){
+  dayNum = Math.floor(Math.random()*366);
+    x = weekdayName2(dayNum);
+    if (x === "Sunday"){
+      console.log("Enjoy your day off!")
+    }
+  }
+}
+
+someDays();
+
+function monthName(monthNum){
 
 }
 
-function dateOnIsland(){
+function dayToMonth(dayNum){
+
+}
+
+function fullDate(dayNum){
+
+}
+
+function fullDate2(dayNum){
+
+}
+
+function fullDate3(dayNum){
 
 }
