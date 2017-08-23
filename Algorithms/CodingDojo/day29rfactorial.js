@@ -80,4 +80,31 @@ function iBS(arr, search, min, max){
   }
 }
 
-console.log(iBS(arr, 12, 0, 9));
+//console.log(iBS(arr, 12, 0, 9));
+
+arr = [4,3,1,6,7,2];
+
+function bubbleSort(arr){
+  var count = 0;
+    var unsorted;
+    do {
+      unsorted = false;
+      for (var i = 0; i < arr.length- 1 - count; i++){
+        if (arr[i] > arr[i+1]){
+          swap (arr, i, i+1);
+          unsorted = true;
+        }
+      }
+      count++;
+    }
+    while(unsorted === true);
+ console.log(arr);
+}
+
+function swap(arr, indexOne, indexTwo){
+  var temp = arr[indexOne];
+  arr[indexOne] = arr[indexTwo];
+  arr[indexTwo] = temp;
+}
+
+bubbleSort(arr);
