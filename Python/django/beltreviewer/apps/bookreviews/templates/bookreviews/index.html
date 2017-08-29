@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load staticfiles %}
+        <link href="{% static 'bookreviews/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h2>Welcome {{ user.name}}</h2>
+            <p><a href="{% url 'bookreviews:add' %}">Add book and review</a> | <a href="{% url 'loginreg:logout' %}">Logout</a></p>
+
+        </header>
+        <div class="main">
+            <h2>Recent Book Reviews:</h2>
+            {% for review in recent %}
+            <div class="review">
+                <h2><a href="/books/{{review.book.id}}">{{ review.book.title }}</a></h2>
+                <p>Rating: {{ review.rating }}</p>
+                <p><a href="/user/{{review.reviewer.id}}">{{ review.reviewer.name}}</a> says: {{ review.review }}</p>
+                <p>Posted on: {{ review.created_at }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="side">
+            <h2>Other Books with Reviews:</h2>
+            {% for review in more %}
+            <div class="review">
+                <h2><a href="/books/{{review.book.id}}">{{ review.book.title }}</a></h2>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+</html>
