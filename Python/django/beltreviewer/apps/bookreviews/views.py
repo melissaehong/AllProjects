@@ -29,6 +29,7 @@ def create(request):
     if errs:
         for e in errs:
             messages.error(request, e)
+        return redirect('/books/add')
     else:
         Review.objects.create_review(request.POST, request.session['user_id'])
     return redirect('/books')

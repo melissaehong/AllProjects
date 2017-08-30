@@ -8,7 +8,7 @@
         <link href="{% static 'login/style.css' %}" rel="stylesheet">
     </head>
     <body>
-        <p><a href="/books">Home</a> | <a href="{% url 'review:add' %}">Add book and review</a> | <a href="/logout">Logout</a></p>
+        <p><a href="/books">Home</a> | <a href="{% url 'bookreviews:add' %}">Add book and review</a> | <a href="/logout">Logout</a></p>
         <h1><strong>User Alias: </strong>{{user.alias}}</h1>
         <h2><strong>Name: </strong> {{user.name}}</h2>
         <h2><strong>Email: </strong> {{user.email}}</h2>

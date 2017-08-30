@@ -1,6 +1,8 @@
+from __future__ import unicode_literals
 from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
 from django.contrib import messages
 from models import User
+from ..bookreviews.models import Book
 import bcrypt
 
 # Create your views here.
