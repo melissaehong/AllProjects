@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load staticfiles %}
+        <link href="{% static 'review/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+      <p>
+        <p><a href="/travels">Home</a> | <a href="/logout">Logout</a></p>
+        <div class="reviews">
+            <h3>Trips:</h3>
+            <hr>
+            <h1>{{trips.destination}}</h1>
+            <h2>Planned By: {{user.name}}</h2>
+            <p>Travel Date From: {{trips.start_date}}</p>
+            <p>Travel Date To: {{trips.end_date}}</p>
+            <h1>Other users' joining the trip:</h1>
+              <p>{{trips.tripper}}</p>
+        </div>
+
+    </body>
+</html>

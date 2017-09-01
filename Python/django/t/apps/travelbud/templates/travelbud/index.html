@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load staticfiles %}
+        <link href="{% static 'bookreviews/style.css' %}" rel="stylesheet">
+    </head><p>
+    <body>
+        <header>
+          <h2>Hello, {{request.session.name}}!
+          <p><a href="{% url 'loginreg:logout' %}">Logout</a></p>
+        </header>
+        <div class="main">
+            <h2>Your Trip Schedules:</h2>
+            {% if user%}
+            {% for trip in user %}
+            <div class="review">
+                <p>Destination:<a href="/travels/{{trip.id}}">{{ trip.destination }}</a></h2>
+                <p>Travel Start Date: {{ trip.start_date }}</p>
+                <p>Travel End Date: {{ trip.end_date}}</p>
+                <p>Plan: {{ trip.description }}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+        <div class="side">
+            <h2>Other Books with Reviews:</h2>
+            {% if trip %}
+            {% for trip in other_users %}
+            <div class="review">
+                <p>Name: {{ user.name}}
+                <p><a href="/travels/{{trip.id}}">{{ Trip.destination }}</a></h2>
+                <p>Travel Start Date: {{ Trip.start_date }}</p>
+                <p>Travel End Date: {{ Trip.end_date}}</p>
+                <p>Plan: {{ Trip.description }}</p>
+                <p>Do you want to join? <a href='/travels/{{trip.id}}/join'>Join</a>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <p><a href="/add">Add Travel Plan</a>
+        </div>
+    </body>
+</html>
