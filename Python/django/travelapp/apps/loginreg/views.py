@@ -68,13 +68,12 @@ def show(request, user_id):
     }
     return render(request, 'loginreg/show.html', context)
 
-def add(request):
-    return render(request, 'travelbud/add.html')
-
 def logout(request):
     for key in request.session.keys():
         del request.session[key]
     return redirect('/')
 
-def create(request):
-    pass
+def delete(request, user_id):
+    deleting = User.objects.get(id = user_id)
+    deleting.delete()
+    return redirect('/page')

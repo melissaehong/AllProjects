@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% load staticfiles %}
-        <link href="{% static 'bookreviews/style.css' %}" rel="stylesheet">
+        <link href="{% static 'loginreg/style.css' %}" rel="stylesheet">
     </head><p>
     <body>
         <header>
@@ -14,7 +14,7 @@
         </header>
         <div class="main">
             <h2>Your Trip Schedules:</h2>
-            {% for trip in users %}
+            {% for user in users %}
             <div class="review">
                 <p>Destination:<a href="/travels/destination/{{trip.id}}">{{ trip.destination }}</a></h2>
                 <p>Travel Start Date: {{ trip.start_date }}</p>
@@ -39,6 +39,9 @@
             {% endfor %}
             {% endif %}
             <p><a href="/travels/add">Add Travel Plan</a>
+              {% for user in users %}
+                Delete <a href = '/users/{{user_id}}/delete'>{{user.name}}</a>
+                {% endfor %}
         </div>
     </body>
 </html>

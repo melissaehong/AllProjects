@@ -37,5 +37,6 @@ class Trip_Review(models.Model):
     description = models.CharField(max_length=100)
     start_date = models.CharField(max_length=100)
     end_date = models.CharField(max_length=100)
+    planner = models.ForeignKey(User, related_name = 'trip_planner')
+    travelers = models.ManyToManyField(User, related_name = 'trip_travelers')
     objects = TripManager()
-    trip = models.ForeignKey(Trip, related_name = 'trip_reviews')

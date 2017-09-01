@@ -10,7 +10,7 @@ def index(request):
         'users' : Trip_Review.objects.trip_and_trippers()[0],
         'other_users': Trip_Review.objects.trip_and_trippers()[1]
     }
-    return render(request, 'travelbud/index.html', context)
+    return render(request, 'travelbuddy/index.html', context)
 
 def show(request, trip_id):
     print 'I am show'
