@@ -52,8 +52,9 @@ class UserManager(models.Manager):
         pass
 
 class User(models.Model):
-    name = models.CharField(max_length = 100)
-    username = models.CharField(max_length = 100)
+    first_name = models.CharField(max_length = 100)
+    last_name = models.CharField(max_length = 100)
+    email = models.CharField(max_length = 255)
     password = models.CharField(max_length = 255)
     objects = UserManager()
     def __str__(self):
