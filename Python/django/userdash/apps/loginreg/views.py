@@ -2,18 +2,22 @@ from __future__ import unicode_literals
 from django.shortcuts import render, redirect, reverse, HttpResponseRedirect
 from django.contrib import messages
 from models import User
-from ..travelbuddy.models import *
+from ..dashboard.models import *
 import bcrypt
 
 # Create your views here.
 def index(request):
+
+    return render(request, 'loginreg/index.html')
+
+def register(request):
     if 'errors' not in request.session:
         request.session['errors'] = ''
     if 'success' not in request.session:
         request.session['success'] = ''
-    return render(request, 'loginreg/index.html')
+    return render(request, 'loginreg/register.html')
 
-def register(request):
+def register_user(request):
     if request.method == 'POST':
         User.objects.validate(request)
 
@@ -22,25 +26,42 @@ def register(request):
         if result[0] == False:
             print request.session['errors']
             print_messages(request, result[1])
-            return redirect('/')
+            return redirect('/register')
 
         else:
             return log_user_in(request, result[1])
 
 def signin(request):
+    if 'errors' not in request.session:
+        request.session['errors'] = ''
+    if 'success' not in request.session:
+        request.session['success'] = ''
+    return render(request, 'loginreg/signin.html')
+
+def signin_user(request):
     if request.method == 'POST':
         result = User.objects.validateLogin(request)
 
         if result[0] == False:
             print_messages (request, result[1])
-            return redirect('/')
+            return redirect('/signin')
         return log_user_in(request, result[1])
+
+def dashboard(request):
+    users = User.objects.all()
+    context = {
+        'users': users
+    }
+    return render(request, 'loginreg/dashboard.html', context)
 
 def log_user_in(request, user):
     request.session['user_id'] = user.id
-    request.session['name'] = user.name
-    request.session['username'] = user.username
-    return HttpResponseRedirect(reverse("travels:index"))
+    request.session['name'] = user.first_name
+    if user.user_level == 9:
+        user.user_level = 'admin'
+    if user.user_level == 1:
+        user.user_level = 'normal'
+    return redirect('/dashboard')
 
 def print_messages(request, message_list):
     for message in message_list:

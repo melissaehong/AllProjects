@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
-    {% load staticfiles %}
     <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel = 'stylesheet' type = 'text/css' href = '{% static 'loginreg/css/styles.css' %}'>
     <title></title>
-    <link rel = 'stylesheet' type = 'text/css' href = '{% static 'loginreg/css/style.css' %}'>
   </head>
   <body>
-    {% for message in messages %}
-    {{ message }}<br>
-    {% endfor %}
     <div id = 'container'>
-    <h1>Welcome!</h1>
-        <div id = 'register'>
-          <form action = '/register' method = 'post'>
-            {% csrf_token %}
-            <h2>Register</h2>
-            <label>Name:</label><input type = 'text' name = 'name'>
-            <br><label>Username:</label><input type = 'text' name = 'username'>
-            <br><label>Password:</label><input type = 'password' name = 'password'>
-            <br>*Password should be at least 8 characters
-            <br><label>Confirm Password:</label><input type = 'password' name = 'confirm_password'>
-            <br><input type = 'submit' value = 'Register'>
-          </form>
+      <div id = 'top'>
+        <div id = 'top-left'>
+          Test App &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/">Home</a>
+        </div>
+        <div id = 'top-right'>
+          <a href='/signin'>Sign In</a>
       </div>
-      <div id = 'login'>
-        <form action = '/login' method = 'post'>
-          <h2>Login</h2>
-          {% csrf_token %}
-          <label>Username:</label><input type = 'text' name = 'username'>
-          <br><label>Password:</label><input type = 'password' name = 'password'>
-          <br><input type = 'submit' value = 'Login'>
-        </form>
+      <div id = 'middle'>
+        <h1> Welcome to the Test!</h1>
+        We're going to build a cool application using a MVC framework!  This application was built with the Village88 folks!
+        <p><a href='/signin'>Start</a></p>
+      </div>
+      <div id = 'bottom'>
+        <div class = 'bottom-box'>
+          <span>Manage Users</span><br><br>
+          Using this application, you'll learn how to add, remove, and edit users for this application
+        </div>
+        <div class = 'bottom-box'>
+          <span>Leave messages</span><br><br>
+          Users will be able to leave a message to another user using this application
+        </div>
+        <div class = 'bottom-box'>
+          <span>Edit User Information</span><br><br>
+          Admins will be able to edit another user's information(email address, first name, last name, etc)
+        </div>
       </div>
     </div>
   </body>

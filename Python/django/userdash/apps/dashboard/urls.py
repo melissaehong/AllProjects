@@ -1,9 +1,10 @@
 from django.conf.urls import url
+from . import views
 
 urlpatterns = [
-    url(r'^dashboard$', views.index)
+    url(r'^dashboard$', views.index),
     url(r'^dashboard/admin$', views.admin),
-    url(r'^/users/new', views.add),
-    url(r'^/users/show/(?P=<user_id>)\d+)$', views.show),
-    url(r'^/users/edit$'), views.edit)
+    url(r'^users/new', views.add),
+    url(r'^users/show/(?P<user_id>\d+)$', views.show),
+    url(r'^users/edit$', views.edit)
 ]
