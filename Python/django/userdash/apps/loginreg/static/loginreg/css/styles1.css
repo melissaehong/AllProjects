@@ -39,8 +39,8 @@
 }
 
 #middle{
-  width: 600px;
-  height: 200px;
+  width: 900px;
+  height: 500px;
   display: inline-block;
   background-color:lightgrey;
 }
@@ -75,6 +75,11 @@
   margin-top: 50px;
 }
 
+textarea{
+  height: 50px;
+  width: 400px;
+}
+
 input{
   margin: 1px;
 }
@@ -97,4 +102,23 @@ input[type = submit]{
 
 span{
   font-weight: bolder;
+}
+
+#form1{
+  display: inline-block;
+  width: 400px;
+  height: 300px;
+  vertical-align: top;
+}
+
+#form2{
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  vertical-align: top;
+  background-color:pink;
+}
+
+#form3{
+
 }

@@ -13,8 +13,6 @@ def index(request):
 def register(request):
     if 'errors' not in request.session:
         request.session['errors'] = ''
-    if 'success' not in request.session:
-        request.session['success'] = ''
     return render(request, 'loginreg/register.html')
 
 def register_user(request):
@@ -34,8 +32,6 @@ def register_user(request):
 def signin(request):
     if 'errors' not in request.session:
         request.session['errors'] = ''
-    if 'success' not in request.session:
-        request.session['success'] = ''
     return render(request, 'loginreg/signin.html')
 
 def signin_user(request):
@@ -48,19 +44,24 @@ def signin_user(request):
         return log_user_in(request, result[1])
 
 def dashboard(request):
+    print request.session['user_id']
+    username = User.objects.get(id=request.session['user_id'])
     users = User.objects.all()
+    for user in users:
+        if user.user_level == 9:
+            user.user_level = 'admin'
+        if user.user_level == 1:
+            user.user_level = 'normal'
     context = {
-        'users': users
+        'users': users,
+        'user': user,
+        'username': username
     }
     return render(request, 'loginreg/dashboard.html', context)
 
 def log_user_in(request, user):
     request.session['user_id'] = user.id
-    request.session['name'] = user.first_name
-    if user.user_level == 9:
-        user.user_level = 'admin'
-    if user.user_level == 1:
-        user.user_level = 'normal'
+    print request.session['user_id']
     return redirect('/dashboard')
 
 def print_messages(request, message_list):

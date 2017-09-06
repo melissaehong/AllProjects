@@ -18,6 +18,15 @@ class UserManager(models.Manager):
 
         return (True, user)
 
+    def validateRegister_User(self,request):
+        errors = self.validate(request)
+
+        if len(errors) > 0:
+            return (False, errors)
+
+        return (True, user)
+
+
     def validateLogin(self, request):
         try:
             user = User.objects.get(email = request.POST['email'])
@@ -31,7 +40,6 @@ class UserManager(models.Manager):
 
     def validate(self, request):
         errors = []
-        request.session['success'] = []
         if len(request.POST['first_name'] or request.POST['last_name']) < 2:
             errors.append('Name not long enough!')
         if request.POST['password'] != request.POST['confirm_password']:
@@ -58,8 +66,20 @@ class User(models.Model):
     last_name = models.CharField(max_length = 100)
     email = models.CharField(max_length = 255)
     password = models.CharField(max_length = 255)
+    description = models.TextField(max_length = 1000)
     user_level = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add = True)
     objects = UserManager()
-    def __str__(self):
-        return self.username
+
+class Message(models.Model):
+  message = models.TextField()
+  user = models.ForeignKey(User)
+  created_at = models.DateTimeField(auto_now_add=True)
+  updated_at = models.DateTimeField(auto_now=True)
+
+class Comment(models.Model):
+  comment = models.TextField()
+  user = models.ForeignKey(User)
+  message = models.ForeignKey(Message)
+  created_at = models.DateTimeField(auto_now_add=True)
+  updated_at = models.DateTimeField(auto_now=True)

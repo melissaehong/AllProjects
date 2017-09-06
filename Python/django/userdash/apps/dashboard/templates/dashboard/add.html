@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        {% load staticfiles %}
+    <link rel = 'stylesheet' type = 'text/css' href = '{% static 'loginreg/css/styles.css' %}'>
+    <title></title>
+  </head>
+  <body>
+    <div id = 'container'>
+      {% for message in messages %}
+      {{ message }}<br>
+      {% endfor %}
+      <div id = 'top'>
+        <div id = 'top-left'>
+          Test App &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/dashboard">Dashboard</a>&nbsp;&nbsp;
+          <a href='/users/{{user.id}}/profile'>Profile</a>&nbsp;&nbsp;
+        </div>
+        <div id = 'top-right'>
+          <a href='/logout'>Log off</a>
+      </div>
+      <div id = 'middle'>
+        <span>Add a new user</span> <a href='/dashboard'><button>Return to Dashboard</button></a>
+        <br>
+        <form action = '/users/create' method = 'post'>
+          {% csrf_token %}
+          <br>Email: <br><input type = 'text' name = 'email'>
+          <br>First Name: <br><input type = 'text' name = 'first_name'>
+          <br>Last Name: <br><input type = 'text' name = 'last_name'>
+          <br>Password: <br><input type = 'password' name = 'password'>
+          <br>Confirm Password: <br><input type = 'password' name = 'confirm_password'>
+          <br><input type = 'submit' name = 'Create'>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
