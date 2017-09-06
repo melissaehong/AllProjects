@@ -19,24 +19,36 @@
       </div>
       <div id = 'middle'>
         <br>
-        {{user.first_name}} {{user.last_name}}
+        {{owner.first_name}} {{owner.last_name}}
         <br><br>
-        Registered at: {{user.created_at}}
-        <br>User ID: #{{user.id}}
-        <br>Email address: {{user.email}}
-        <br>Description: {{user.description}}
+        Registered at: {{owner.created_at}}
+        <br>User ID: #{{owner.id}}
+        <br>Email address: {{owner.email}}
+        <br>Description: {{owner.description}}
         <br><br>
-        Leave a message for {{user.first_name}}
-        <form action = '/users/{{user.id}}/message' method = 'post'>
+        Leave a message for {{owner.first_name}}
+        <form action = '/users/{{owner.id}}/message' method = 'post'>
           {% csrf_token %}
           <textarea name = 'message'></textarea>
           <input type = 'submit' value = 'Post'>
         </form>
       </div>
-
-      {% for message in messages %}
-      {{message}}
-      {{messages.message}}
+      {% for message in all_messages %}
+      <br>message.author.first_name{{message.author.first_name}} wrote:<br>
+      message.message{{message.message}}<br>
+      Created at: message.created_at{{message.created_at}}<br>
+        &nbsp;&nbsp;{% for comment in comments %}
+          &nbsp;&nbsp;{% if message.id == comment.message.id %}
+            &nbsp;&nbsp;{{ comment.author.first_name }} wrote:<br>
+              &nbsp;&nbsp;&nbsp;&nbsp;{{comment.comment}}<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;{{comment.created_at|timesince}} ago<br>
+          {% endif %}
+        {% endfor %}
+        <form action='/users/{{owner.id}}/{{message.id}}/comment' method="post">
+        {% csrf_token %}
+        &nbsp;&nbsp;&nbsp;&nbsp;<textarea name="comment" rows="4" cols="80">write a message here</textarea>
+        &nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" name="button">Post</button>
+      </form>
       {% endfor %}
     </div>
   </body>

@@ -33,24 +33,25 @@ def profile(request, id):
     return render(request, 'dashboard/profile.html', context)
 
 def show(request, id):
-    user = User.objects.get(id=id)
-    users = User.objects.all()
-    messages = Message.objects.all()
-        
+    owner = User.objects.get(id=id)
     context = {
-        'user':user,
-        'users': users,
-        'messages': messages
+        'owner': owner,
+        'all_messages': Message.objects.filter(owner=owner),
+        'comments': Comment.objects.filter(owner=owner)
     }
     return render(request, 'dashboard/show.html', context)
 
-def message(request, id):
-    user = User.objects.get(id=id)
-    Message.objects.create(message = request.POST['message'], user = user)
-    return redirect('/dashboard')
+def message(request, owner_id):
+    if request.method == 'POST':
+        author = User.objects.get(id=request.session['user_id'])
+        Message.objects.create_message(request.POST, owner_id, author)
+    return redirect('dashboard:show', id=owner_id)
 
-def comment(request, id):
-    pass
+def comment(request, owner_id, message_id):
+    if request.method == 'POST':
+        author = User.objects.get(id=request.session['user_id'])
+        Comment.objects.create_comment(request.POST, owner_id, author, message_id)
+    return redirect('dashboard:show', id=owner_id)
 
 def edit(request, id):
     user = User.objects.get(id=id)

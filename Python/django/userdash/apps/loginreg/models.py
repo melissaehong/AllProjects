@@ -70,16 +70,3 @@ class User(models.Model):
     user_level = models.IntegerField()
     created_at = models.DateTimeField(auto_now_add = True)
     objects = UserManager()
-
-class Message(models.Model):
-  message = models.TextField()
-  user = models.ForeignKey(User)
-  created_at = models.DateTimeField(auto_now_add=True)
-  updated_at = models.DateTimeField(auto_now=True)
-
-class Comment(models.Model):
-  comment = models.TextField()
-  user = models.ForeignKey(User)
-  message = models.ForeignKey(Message)
-  created_at = models.DateTimeField(auto_now_add=True)
-  updated_at = models.DateTimeField(auto_now=True)
