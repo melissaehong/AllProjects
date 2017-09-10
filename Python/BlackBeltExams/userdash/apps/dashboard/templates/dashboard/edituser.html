@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    {% load staticfiles %}
+    <link rel = 'stylesheet' type = 'text/css' href = '{% static 'loginreg/css/styles.css' %}'>
+    <title></title>
+  </head>
+  <body>
+    <div id = 'container'>
+      {% for message in messages %}
+      {{ message }}<br>
+      {% endfor %}
+      <div id = 'top'>
+        <div id = 'top-left'>
+          Test App &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/dashboard">Dashboard</a>&nbsp;&nbsp;
+          <a href='/users/{{user.id}}/profile'>Profile</a>&nbsp;&nbsp;
+        </div>
+        <div id = 'top-right'>
+          <a href='/logout'>Log off</a>
+        </div>
+      </div>
+      <div id = 'middle'>
+        <form action = '/users/{{user.id}}/update' method = 'post' id = 'form1'><br>
+          <span>Edit user # {{user.user_id}}</span><br><br>
+          Edit Information<br>
+          {% csrf_token %}
+       <div class="form-group">
+           <label for="first_name">First Name:</label>
+           <input type="text" name="first_name" value="{{ user.first_name }}">
+       </div>
+       <div class="form-group">
+           <label for="last_name">Last Name:</label>
+           <input type="text" name="last_name" value="{{ user.last_name }}">
+       </div>
+       <div class="form-group">
+           <label for="email">Email:</label>
+           <input type="email" name="email" value="{{ user.email }}">
+       </div>
+       <div class="form-group">
+           <label for="password">Password:</label>
+           <input type="password" name="password" value="{{ user.password }}">
+       </div>
+       <div class="form-group">
+           <label for="user_level">User Level:</label>
+           <input type="user_level" name="user_level" value="{{ user.user_level }}">
+       </div>
+       <input type="submit" value="Update">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
