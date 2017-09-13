@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load staticfiles %}
+        <link href="{% static 'loginreg/css/style.css' %}" rel="stylesheet">
+    </head><p>
+    <body>
+      <div id = 'container'>
+        <div id = 'top'>
+          <h2>Welcome, {{request.session.name}}!</h2>
+          {{count}} poked you!
+        </div>
+        <div id = 'top-right'>
+          <p><a href="{% url 'loginreg:logout' %}">Logout</a></p>
+        </div>
+        <div id = 'middle'>
+          {% for poke in pokes %}
+          <br>{{poke.poker.alias}} poked you {{poke.poke_count}} times
+          {% endfor %}
+          <br><br>
+        </div>
+        <div id = 'bottom'>
+          <table>
+            <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th>Alias</th>
+                      <th>Email Address</th>
+                      <th>Poke History</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {% for user in users %}
+                  {% if user.id != request.session.user_id %}
+                  <tr>
+                      <td>{{ user.name }}</td>
+                      <td>{{ user.alias }}</td>
+                      <td>{{ user.email }}</td>
+                      <td>{{ user.poke_list }}</td>
+                      <td><form action = '/pokes/poke' method = 'post'>
+                         {% csrf_token %}
+                      <input type = 'hidden' name = 'poker' value = '{{request.session.user_id}}'>
+                      <input type = 'hidden' name = 'pokee' value = '{{user.id}}'>
+                      <input type = 'submit' value = 'Poke!'></form></td>
+                      {% endif %}
+                    {% endfor %}
+                  </tr>
+        </div>
+      </div>
+    </body>
+</html>
