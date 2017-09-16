@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% load staticfiles %}
+        <link href="{% static 'loginreg/css/style.css' %}" rel="stylesheet">
+    </head><p>
+    <body>
+      <div id = 'container'>
+        <header>
+          <h2>Hello, {{request.session.name}}!
+          <p><a href="{% url 'loginreg:logout' %}">Logout</a></p>
+        </header>
+        <div>
+            <h2>Your Trip Schedules:</h2>
+            {% for trip in trips %}
+            <div>
+                <p>Destination:<a href="/travels/destination/{{trip.id}}">{{ trip.destination }}</a></h2>
+                <p>Travel Start Date: {{trip.start_date|date:"M d, Y"}}</p>
+                <p>Travel End Date: {{trip.end_date|date:"M d, Y"}}</p>
+                <p>Plan: {{ trip.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div>
+            <h2>Other Users with Trips:</h2>
+            {% for trip in other_trips %}
+            <div>
+                <p>Name: {{ trip.planner.name}}
+                <p><a href="/travels/destination/{{trip.id}}">{{ trip.destination }}</a></h2>
+                <p>Travel Start Date: {{ trip.start_date}}</p>
+                <p>Travel End Date: {{ trip.end_date}}</p>
+                <p>Plan: {{ trip.description }}</p>
+                <p>Do you want to join? <a href='/travels/{{trip.id}}/join'>Join</a>
+            </div>
+            {% endfor %}
+            <p><a href="/travels/add">Add Travel Plan</a>
+        </div>
+      </div>
+    </body>
+</html>
