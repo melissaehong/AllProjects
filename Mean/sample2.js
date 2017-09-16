@@ -1,5 +1,5 @@
-function sayName(name){
-    console.log("Hello my name is " + name);
+function ten(){
+    return 10;
 };
-let x = sayName('Morty');
-console.log(x);
+let twenty = ten() + ten();
+console.log(twenty);
