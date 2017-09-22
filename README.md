@@ -4,20 +4,20 @@ This repository is a culmination of all the work I have created since June 2016.
 
 A guide through the different folders:
 
-Algorithms
+Algorithms: 
 Algorithm challenges I have solved and/or yet to solve from Coding Dojo or CodeFights
 
-C#
+C#: 
 Continuing education of C# since September 2017
 
-MEAN
+MEAN: 
 Various projects using Javascript and Node.js since June 2016
 
-Python
+Python: 
 Various projects using Python, Django, Flask, mySQL, SQLite since June 2016
 
-Ruby
+Ruby: 
 Continuing education of Ruby on Rails since September 2017
 
-Web Fundamentals
+Web Fundamentals: 
 Various projects using HTML, CSS, jQuery, Javascript, API, Ajax since June 2016
