@@ -29,3 +29,8 @@ Never thirsty, ever drinking,
 All in mail never clinking.
 """
 print(Poem)
+
+var arrayOfInts = [1, 2, 3, 4, 5]
+var popped = arrayOfInts.remove(at: 0)
+print(popped)
+print(arrayOfInts)

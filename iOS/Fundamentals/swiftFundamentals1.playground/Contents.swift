@@ -2,10 +2,10 @@
 
 import UIKit
 
-var type: Float = "Rectangle"
+var type: String = "Rectangle"
 var description: String = "A quadrilateral with four right angles"
-let width: Double = 5
-let height: Int = 10.5
+var width: Double = 5.0
+var height: Double = 10.5
 var area: Double = width * height
 height += 1
 width += 1
