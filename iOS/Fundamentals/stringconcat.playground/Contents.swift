@@ -74,3 +74,8 @@ if let num = jerseyNumber {
     print(num)
 }
 
+var present: String? = "Apple Watch"
+// If we can let "unwrappedPresent" equal "present" meaning there is something inside of present then go on to do something with "unwrappedPresent"
+if let unwrappedPresent = present {
+    print("OMG THANK YOU FOR THE \(unwrappedPresent)")
+}
