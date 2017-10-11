@@ -11,4 +11,44 @@ Now create another function tossMultipleCoins(Int) -> Double
 Have this function call the tossCoin function multiple times based on the Integer input
 Have the function return a Double that reflects the ratio of head toss to total toss*/
 
+func tossCoin() -> String{
+    var result: String
+    print("Tossing a Coin!")
+    if arc4random_uniform(2) == 0 {
+        result = "Heads"
+    }
+    else{
+        result = "Tails"
+    }
+    print(result)
+    return result
+}
+
+tossCoin()
+
+/*func tossMultipleCoins(tosses:Int) -> Double{
+    var headsCount = 0
+    var tailsCount = 0
+    
+    for _ in 0...tosses{
+        if tossCoin() == "Heads"{
+            headsCount += 1
+        }
+        else{
+            tailsCount += 1
+        }
+    }
+    
+    let ratio = Double(tosses) / Double(headsCount)
+    print(ratio)
+    return ratio
+    
+}
+
+
+tossMultipleCoins(tosses:5)
+print("hello")
+tossMultipleCoins(tosses: 13)
+print("end")
+ */
 
