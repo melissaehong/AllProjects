@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request, redirect
 import requests
+app = Flask(__name__)
 # HTML-based index method
 @app.route('/')
-def index(self):
-    return self.load_view('main/index.html')
+def index():
+    return render_template('index.html')
+def index_2(self):
+    return self.load_view('index.html')
 # API request, to be reformulated and sent from our server to theirs
 @app.route('/movie')
 def get_movie(self):
@@ -16,3 +19,4 @@ def get_movie(self):
     # we then send the response back to our template which sent the initial post request
     # we don't jsonify it as it is already in JSON format!
     return response
+app.run(debug=True)
