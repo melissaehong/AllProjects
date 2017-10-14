@@ -9,11 +9,14 @@ $(document).ready(
                     $(this).serialize( ),
                     function(res) {
                         // pay careful attention to the response object
+                        var myResult = $('#results');
                         console.log('the response object:');
                         console.log(res);
                         var html_string = "";
                         if (res.results.length !== 0) {
                             html_string = "<video controls src='" + res.results[0].previewUrl + "'></video>";
+                            myResult.html(html_string);
+                            console.log('it works');
                         }
                         else {
                             html_string = "Not Found";

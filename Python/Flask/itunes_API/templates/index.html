@@ -1,14 +1,16 @@
 <html>
     <head>
-    <script type = 'text/javascript' src="{{ url_for('static', filename='ajax.js') }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script type = 'text/javascript' src="{{ url_for('static', filename='ajax.js') }}"></script>
     </head>
     <body>
         <h1>Enter Artist's Name:</h1>
-        <form action="/get_movie" method="post">
-            <label for="user_input">Enter Artist's Name:</label>
+        <form action="/movie" method="post">
+            <label for="user_input">Enter Artists's Name:</label>
             <input id="user_input" name="user_input" type="search">
             <input type="submit" value="search">
         </form>
+        <div id="results"></div>
     </body>
 </html>
 
