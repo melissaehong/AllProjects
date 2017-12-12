@@ -3,6 +3,7 @@
   <head>
     {% load staticfiles %}
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
     <title></title>
     <link rel = 'stylesheet' type = 'text/css' href = '{% static 'loginreg/css/style.css' %}'>
   </head>
@@ -11,7 +12,15 @@
     {{ message }}<br>
     {% endfor %}
     <div id = 'container'>
-    <h1>Welcome!</h1>
+    <h1>Welcome to PokesApp!</h1>
+      <div class = 'navbar'>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Sign In</li>
+        </ul>
+      </div>
         <div id = 'register'>
           <form action = '/main/register' method = 'post'>
             {% csrf_token %}
@@ -20,7 +29,6 @@
             <br><label>Alias:</label><input type = 'text' name = 'alias'>
             <br><label>Email:</label><input type = 'text' name = 'email'>
             <br><label>Password:</label><input type = 'password' name = 'password'>
-            <br>*Password should be at least 8 characters
             <br><label>Confirm Password:</label><input type = 'password' name = 'confirm_password'>
             <br><label>Date of Birth:</label><input type = 'date' name = 'birthdate'>
             <br><input type = 'submit' value = 'Register'>

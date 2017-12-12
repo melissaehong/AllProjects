@@ -1,4 +1,8 @@
-var arr = [];
-arr.length = 10;
+function Node(element){
+    this.element = element;
+    this.next = null;
+}
 
-console.log(arr);
+function SinglyLinkedList(){
+    this.head = new Node("head");
+}
