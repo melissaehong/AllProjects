@@ -10,6 +10,9 @@ Algorithm challenges I have solved and/or yet to solve from Coding Dojo or CodeF
 C#: 
 Continuing education of C# since September 2017
 
+iOS:
+Continuing education of iOS(Swift) since September 2017
+
 MEAN: 
 Various projects using Javascript and Node.js since June 2016
 
