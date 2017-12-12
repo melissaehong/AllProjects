@@ -3,46 +3,71 @@
   <head>
     {% load staticfiles %}
     <meta charset="utf-8">
+    <title>PokesApp</title>
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
-    <title></title>
     <link rel = 'stylesheet' type = 'text/css' href = '{% static 'loginreg/css/style.css' %}'>
   </head>
   <body>
-    {% for message in messages %}
-    {{ message }}<br>
-    {% endfor %}
     <div id = 'container'>
-    <h1>Welcome to PokesApp!</h1>
+
       <div class = 'navbar'>
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Sign In</li>
+          <li><a id="link-home" href="#home">Home</a></li>
+          <li><a id="link-about" href="#about">About</a></li>
+          <li><a id="link-contact" href="#contact">Contact</a></li>
+          <li><a id="link-signin" href="#signin">Sign In</a></li>
         </ul>
       </div>
-        <div id = 'register'>
-          <form action = '/main/register' method = 'post'>
-            {% csrf_token %}
-            <h2>Register</h2>
-            <label>Name:</label><input type = 'text' name = 'name'>
-            <br><label>Alias:</label><input type = 'text' name = 'alias'>
-            <br><label>Email:</label><input type = 'text' name = 'email'>
-            <br><label>Password:</label><input type = 'password' name = 'password'>
-            <br><label>Confirm Password:</label><input type = 'password' name = 'confirm_password'>
-            <br><label>Date of Birth:</label><input type = 'date' name = 'birthdate'>
-            <br><input type = 'submit' value = 'Register'>
-          </form>
+      <div id = 'index' class = 'content'>
+        <h1 id = 'welcome'>Welcome!</h1>
+        <button class = 'myButton'><a href = '#signin'>Ready to Poke?</a></button>
       </div>
-      <div id = 'login'>
-        <form action = '/main/login' method = 'post'>
-          <h2>Login</h2>
-          {% csrf_token %}
-          <label>Email:</label><input type = 'text' name = 'email'>
-          <br><label>Password:</label><input type = 'password' name = 'password'>
-          <br><input type = 'submit' value = 'Login'>
-        </form>
+      <div id = 'about' class = 'panel'>
+        <div class = 'content'>
+          <h1>About</h1>
+          <p>
+            Just a little about me.
+          </p>
+        </div>
+      </div>
+      <div id = 'contact' class = 'panel'>
+        <div class = 'content'>
+          <h1>Contact</h1>
+        </div>
+      </div>
+      <div id = 'signin' class = 'panel'>
+        <div class = 'content'>
+          <h1>Sign In</h1>
+          <div class = 'error'>
+            {% for message in messages %}
+            {{ message }}<br>
+            {% endfor %}
+          </div>
+          <div id = 'register'>
+            <form action = '/register' method = 'post'>
+              {% csrf_token %}
+              <h2>New Here?</h2>
+              <label>Name:</label><input type = 'text' name = 'name'>
+              <br><label>Alias:</label><input type = 'text' name = 'alias'>
+              <br><label>Email:</label><input type = 'text' name = 'email'>
+              <br><label>Password:</label><input type = 'password' name = 'password'>
+              <br><label>Confirm Password:</label><input type = 'password' name = 'confirm_password'>
+              <br><label>Date of Birth:</label><input type = 'date' name = 'birthdate'>
+              <br><button type = 'submit' class="myButton" value = 'Register'>Register</button>
+            </form>
+          </div>
+          <div id = 'login'>
+          <form action = '/login' method = 'post'>
+            <h2>Login</h2>
+            {% csrf_token %}
+            <label>Email:</label><input type = 'text' name = 'email'>
+            <br><label>Password:</label><input type = 'password' name = 'password'>
+            <br><button type = 'submit' class="myButton" value = 'Login'>Sign In</button>
+          </form>
+          </div>
+        </div>
       </div>
     </div>
+
   </body>
 </html>

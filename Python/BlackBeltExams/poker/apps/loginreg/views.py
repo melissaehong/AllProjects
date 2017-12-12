@@ -13,6 +13,15 @@ def index(request):
         request.session['success'] = ''
     return render(request, 'loginreg/index.html')
 
+def about(request):
+    return render(request, 'loginreg/about.html')
+
+def contact(request):
+    return render(request, 'loginreg/contact.html')
+
+def signin(request):
+    return render(request, 'loginreg/signin.html')
+
 def register(request):
     if request.method == 'POST':
         User.objects.validate(request)
@@ -22,7 +31,7 @@ def register(request):
         if result[0] == False:
             print request.session['errors']
             print_messages(request, result[1])
-            return redirect('/main')
+            return redirect('/#signin')
 
         else:
             return log_user_in(request, result[1])
@@ -33,7 +42,7 @@ def login(request):
 
         if result[0] == False:
             print_messages (request, result[1])
-            return redirect('/main')
+            return redirect('/#signin')
         return log_user_in(request, result[1])
 
 def log_user_in(request, user):

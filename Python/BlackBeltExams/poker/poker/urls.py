@@ -16,6 +16,6 @@ Including another URLconf
 from django.conf.urls import url, include
 
 urlpatterns = [
-    url(r'^main/', include('apps.loginreg.urls', namespace = 'loginreg')),
+    url(r'^', include('apps.loginreg.urls', namespace = 'loginreg')),
     url(r'^pokes/', include ('apps.pokerapp.urls', namespace = 'pokeapp'))
 ]
