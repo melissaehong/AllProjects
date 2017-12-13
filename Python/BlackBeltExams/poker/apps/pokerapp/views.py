@@ -6,7 +6,7 @@ from django.contrib import messages
 # Create your views here.
 def index(request):
     if not 'user_id' in request.session:
-        return redirect('/main')
+        return redirect('/')
 
     pokes = Poke.objects.get_poked_list(request.session['user_id'])
     users = User.objects.all()

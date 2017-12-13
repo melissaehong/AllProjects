@@ -6,15 +6,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% load staticfiles %}
         <link href="{% static 'loginreg/css/style.css' %}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+        <style>
+          #container{
+            background-color: blue;
+          }
+        </style>
     </head><p>
     <body>
       <div id = 'container'>
         <div id = 'top'>
-          <h2>Welcome, {{request.session.name}}!</h2>
-          {{count}} poked you!
-        </div>
-        <div id = 'top-right'>
-          <p><a href="{% url 'loginreg:logout' %}">Logout</a></p>
+          <div id = 'top-left'>
+            <span>Welcome, {{request.session.name}}!</span><br>
+            <h3>{{count}} poked you!</h3>
+          </div>
+          <div id = 'top-right'>
+              <a class = 'myButton' href="{% url 'loginreg:logout' %}">Logout</a>
+          </div>
         </div>
         <div id = 'middle'>
           {% for poke in pokes %}
@@ -45,7 +53,8 @@
                          {% csrf_token %}
                       <input type = 'hidden' name = 'poker' value = '{{request.session.user_id}}'>
                       <input type = 'hidden' name = 'pokee' value = '{{user.id}}'>
-                      <input type = 'submit' value = 'Poke!'></form></td>
+                      <button type = 'submit' class="myButton" value = 'Poke!'>
+                        Poke!</button></form></td>
                       {% endif %}
                     {% endfor %}
                   </tr>

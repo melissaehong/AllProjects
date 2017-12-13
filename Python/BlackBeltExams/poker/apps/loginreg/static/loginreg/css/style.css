@@ -26,10 +26,10 @@ body{
 
 .navbar {
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.3);
-  position: fixed;
+  background-color: rgba(0, 0, 0, 1);
+  position: absolute;
   top: 0;
-  width: inherit;
+  width: 100%;
 }
 
 #container{
@@ -57,31 +57,45 @@ body{
 }
 
 #top{
-  width: 800px;
+  width: 100%;
   height: 50px;
   display: inline-block;
+  text-align: center;
+  position: relative;
 }
 
 #top-right{
-  margin-left: 400px;
   display: inline-block;
   vertical-align: top;
+  width: 10%;
+  height: 100px;
 }
 
-#left{
-  margin-top: 50px;
-  width: 400px;
-  height: 400px;
+#top-left{
   display: inline-block;
+  width:89%;
+  height: 100px;
 }
 
-#right{
-  display: inline-block;
-  width: 400px;
-  height: 500px;
+#middle{
+  text-align: center;
+  width: 100%;
+  height: 50%;
   vertical-align: top;
-  margin-top: 50px;
+  position: relative;
 }
+
+#bottom{
+  text-align: center;
+}
+
+table{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 
 label{
     display: inline-block;
@@ -91,26 +105,25 @@ label{
 
 ul li{
   display: inline-block;
-  padding-left: 25px;
+  /*padding-left: 25px;
   padding-right: 25px;
   padding-bottom: 10px;
-  padding-top: 10px;
-  margin-right: -7px;
-}
-
-ul li:hover{
-  background-color: purple;
+  padding-top: 10px;*/
+  margin-right: -6px;
 }
 
 a{
   color: inherit;
   text-decoration: none;
+  display: block;
+  border-style: none;
 }
 
 h1{
   padding-top: 5px;
   font-size: 40px;
   text-align: center;
+  padding-bottom: 5px;
 }
 
 #welcome{
@@ -123,7 +136,12 @@ h2{
 }
 
 span{
-  font-weight: bolder;
+  padding-left: 130px;
+  font-size: 39px;
+}
+
+h3{
+  padding-left: 130px;
 }
 
 input[type=date]{
@@ -131,27 +149,66 @@ input[type=date]{
   font-size: 9px;
 }
 
+.button{
+  background-color: rgba(0, 0, 0, 0.1);
+  font-family:'Rock Salt', cursive;
+	font-size:15px;
+	font-weight:bold;
+  color: white;
+  height: 100%;
+  border: none;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  margin-right: -4px;
+  cursor:pointer;
+  display: inline-block;
+}
+
+.active{
+  background-color: darkgrey;
+}
+
+.inactive{
+  background-color: black;
+}
+
+a[id="link-home"]:hover{
+  background-color: purple;
+}
+
+a[id="link-about"]:hover{
+  background-color: blue;
+}
+
+a[id="link-contact"]:hover{
+  background-color: green;
+}
+
+a[id="link-signin"]:hover{
+  background-color: #5042f4;
+}
+
 .myButton {
-	-moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
-	-webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
-	box-shadow:inset 0px 1px 3px 0px #91b8b3;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #8640c7), color-stop(1, #4261bd));
-	background:-moz-linear-gradient(top, #8640c7 5%, #4261bd 100%);
-	background:-webkit-linear-gradient(top, #8640c7 5%, #4261bd 100%);
-	background:-o-linear-gradient(top, #8640c7 5%, #4261bd 100%);
-	background:-ms-linear-gradient(top, #8640c7 5%, #4261bd 100%);
-	background:linear-gradient(to bottom, #8640c7 5%, #4261bd 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8640c7', endColorstr='#4261bd',GradientType=0);
-	background-color:#8640c7;
-	-moz-border-radius:5px;
+	/*background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #8640c7), color-stop(1, #4261bd));
+	background:-moz-linear-gradient(bottom right, yellow, red);
+	background:-webkit-linear-gradient(left top, yellow, red);
+	background:-o-linear-gradient(bottom right, yellow, red);
+	background:-ms-linear-gradient(bottom right, yellow, red);
+	background:linear-gradient(to bottom right, yellow, red);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8640c7', endColorstr='#4261bd',GradientType=0);*/
+  background-color: purple;
+  -moz-border-radius:5px;
 	-webkit-border-radius:5px;
-	border-radius:5px;
+  border-style: none;
+  border-radius:5px;
 	border:1px solid #39423f;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:'Rock Salt', cursive;
-	font-size:15px;
+	font-size:13px;
 	font-weight:bold;
   margin-top: 10px;
 	padding:11px 23px;
@@ -159,15 +216,19 @@ input[type=date]{
 	text-shadow:0px -1px 0px #2b665e;
 }
 
+.myButton:focus{
+  outline: 0;
+}
+
 .myButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4261bd), color-stop(1, #8640c7));
-	background:-moz-linear-gradient(top, #4261bd 5%, #8640c7 100%);
-	background:-webkit-linear-gradient(top, #4261bd 5%, #8640c7 100%);
-	background:-o-linear-gradient(top, #4261bd 5%, #8640c7 100%);
-	background:-ms-linear-gradient(top, #4261bd 5%, #8640c7 100%);
-	background:linear-gradient(to bottom, #4261bd 5%, #8640c7 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4261bd', endColorstr='#8640c7',GradientType=0);
-	background-color:#4261bd;
+  background-color: rgba(2, 164, 250, 0.872);
+	/*background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4261bd), color-stop(1, #8640c7));
+	background:-moz-linear-gradient(bottom right, red,  yellow);
+	background:-webkit-linear-gradient(left top, red, yellow);
+	background:-o-linear-gradient(bottom right, red, yellow);
+	background:-ms-linear-gradient(bottom right, red, yellow);
+	background:linear-gradient(to bottom right, red, yellow);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4261bd', endColorstr='#8640c7',GradientType=0);*/
 }
 
 .myButton:active {
@@ -186,26 +247,77 @@ input[type=date]{
 
 .panel {
   text-align: center;
-  background: lavender; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, purple, blue); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, purple, blue); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, purple, blue); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, purple, blue); /* Standard syntax (must be last) */
+  background: blue; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, blue, green); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, blue, green); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, blue, green); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, blue, green); /* Standard syntax (must be last) */
   width: 100%;
-  min-height: 80%;
+  height: 88%;
+  /*z-index: 2;*/
   position: absolute;
-  background-color: inherit;
+  background-color: blue;
   margin-left: -102%;
   margin-top: 40px;
-  z-index: 2;
-  -webkit-transition: all .4s ease-in-out;
-  tranition: all .4s ease-in-out;
+  padding-bottom: 30px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .panel:target {
   margin-left: 0%;
-  margin-top: 50px;
+  margin-top: 42px;
   background-color: purple;
+}
+
+.panel2 {
+  text-align: center;
+  background: green; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, green, blue); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, green, blue); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, green, blue); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, green, blue); /* Standard syntax (must be last) */
+  width: 100%;
+  height: 88%;
+  /*z-index: 2;*/
+  position: absolute;
+  background-color: blue;
+  margin-left: -102%;
+  margin-top: 40px;
+  padding-bottom: 30px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.panel2:target {
+  margin-left: 0%;
+  margin-top: 42px;
+  background-color: green;
+}
+
+.panel3 {
+  text-align: center;
+  background: green; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, blue, purple); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, blue, purple); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, blue, purple); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, blue, purple); /* Standard syntax (must be last) */
+  width: 100%;
+  height: 88%;
+  /*z-index: 2;*/
+  position: absolute;
+  background-color: blue;
+  margin-left: -102%;
+  margin-top: 40px;
+  padding-bottom: 30px;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.panel3:target {
+  margin-left: 0%;
+  margin-top: 42px;
+  background-color: blue;
 }
 
 #home:target ~ #header #navigation #link-home,

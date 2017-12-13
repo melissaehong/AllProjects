@@ -6,36 +6,37 @@
     <title>PokesApp</title>
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
     <link rel = 'stylesheet' type = 'text/css' href = '{% static 'loginreg/css/style.css' %}'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src = '{% static "loginreg/javascript/script.js"%}' ></script>
   </head>
   <body>
+    <div class = 'navbar'>
+        <a class = 'button button1 inactive' id="link-home" href="#home">Home</a>
+        <a class = 'button button2 inactive' id="link-about" href="#about">About</a>
+        <a class = 'button button3 inactive' id="link-contact" href="#contact">Contact</a>
+        <a class = 'button button4 inactive' id="link-signin" href="#signin">Sign In</a>
+    </div>
     <div id = 'container'>
-
-      <div class = 'navbar'>
-        <ul>
-          <li><a id="link-home" href="#home">Home</a></li>
-          <li><a id="link-about" href="#about">About</a></li>
-          <li><a id="link-contact" href="#contact">Contact</a></li>
-          <li><a id="link-signin" href="#signin">Sign In</a></li>
-        </ul>
-      </div>
       <div id = 'index' class = 'content'>
         <h1 id = 'welcome'>Welcome!</h1>
-        <button class = 'myButton'><a href = '#signin'>Ready to Poke?</a></button>
+        <a class = 'myButton' href = '#signin'>Ready to Poke?</a>
       </div>
       <div id = 'about' class = 'panel'>
         <div class = 'content'>
           <h1>About</h1>
           <p>
-            Just a little about me.
+            PokesApp is an app solely for the purpose of poking.  Who needs messages?
           </p>
         </div>
       </div>
-      <div id = 'contact' class = 'panel'>
+      <div id = 'contact' class = 'panel2'>
         <div class = 'content'>
           <h1>Contact</h1>
+          <p>Melissa Hong </p>
+          <p>melissahong1@gmail.com</p>
         </div>
       </div>
-      <div id = 'signin' class = 'panel'>
+      <div id = 'signin' class = 'panel3'>
         <div class = 'content'>
           <h1>Sign In</h1>
           <div class = 'error'>

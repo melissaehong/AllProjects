@@ -13,15 +13,6 @@ def index(request):
         request.session['success'] = ''
     return render(request, 'loginreg/index.html')
 
-def about(request):
-    return render(request, 'loginreg/about.html')
-
-def contact(request):
-    return render(request, 'loginreg/contact.html')
-
-def signin(request):
-    return render(request, 'loginreg/signin.html')
-
 def register(request):
     if request.method == 'POST':
         User.objects.validate(request)
@@ -57,4 +48,4 @@ def print_messages(request, message_list):
 def logout(request):
     for key in request.session.keys():
         del request.session[key]
-    return redirect('/main')
+    return redirect('/')
