@@ -8,19 +8,19 @@ Algorithms:
 Algorithm challenges I have solved and/or yet to solve from Coding Dojo or CodeFights
 
 C#: 
-Continuing education of C# since September 2017
+Continuing education of C#
 
 iOS:
-Continuing education of iOS(Swift) since September 2017
+Continuing education of iOS(Swift)
 
 MEAN: 
-Various projects using Javascript and Node.js since June 2016
+Various projects using Javascript and Node.js
 
 Python: 
-Various projects using Python, Django, Flask, mySQL, SQLite since June 2016
+Various projects using Python, Django, Flask, mySQL, SQLite
 
 Ruby: 
-Continuing education of Ruby on Rails since September 2017
+Continuing education of Ruby on Rails
 
 Web Fundamentals: 
-Various projects using HTML, CSS, jQuery, Javascript, API, Ajax since June 2016
+Various projects using HTML, CSS, jQuery, Javascript, API, Ajax
