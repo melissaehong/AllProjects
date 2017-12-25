@@ -1,6 +1,6 @@
 # AllProjects
 
-This repository is a culmination of all the work I have created since June 2016.  The majority of work has been the result of attendance and participation in Coding Dojo, a full stack software development program.  For more information about Coding Dojo, the website is: http://www.codingdojo.com
+This repository is a culmination of all the work I have created.
 
 A guide through the different folders:
 
