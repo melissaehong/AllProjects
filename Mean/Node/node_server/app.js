@@ -14,6 +14,13 @@ var server = http.createServer(function (request, response){
             response.end(); // finished!
         });
     }
+    else if(request.url === '/css/style.css'){
+        fs.readFile('./css/style.css', 'utf8', function (errors, contents){
+            response.writeHead(200, {'Content-Type': 'text/css'});  // send data about response
+            response.write(contents);  //  send response body
+            response.end(); // finished!
+        });
+    }
     // request didn't match anything:
     else {
         response.writeHead(404);
