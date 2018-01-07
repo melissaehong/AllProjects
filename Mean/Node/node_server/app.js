@@ -1,4 +1,13 @@
-// get the http module:
+
+var server = require('http').createServer();
+var io = require('socket.io')(server);
+io.on('connection', function(client){
+  client.on('event', function(data){});
+  client.on('disconnect', function(){});
+});
+server.listen(3000);
+
+/*// get the http module:
 var http = require('http');
 // fs module allows us to read and write content for responses!!
 var fs = require('fs');
@@ -30,4 +39,4 @@ var server = http.createServer(function (request, response){
 // tell your server which port to run on
 server.listen(6789);
 // print to terminal window
-console.log("Running in localhost at port 6789");
+console.log("Running in localhost at port 6789");*/

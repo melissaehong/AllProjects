@@ -1,0 +1,203 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'install', 'node' ]
+2 info using npm@2.15.9
+3 info using node@v4.6.0
+4 verbose install initial load of /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/package.json
+5 verbose installManyTop reading scoped package data from /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/socket.io/package.json
+6 verbose readDependencies loading dependencies from /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/package.json
+7 silly cache add args [ 'node', null ]
+8 verbose cache add spec node
+9 silly cache add parsed spec Result {
+9 silly cache add   raw: 'node',
+9 silly cache add   scope: null,
+9 silly cache add   name: 'node',
+9 silly cache add   rawSpec: '',
+9 silly cache add   spec: 'latest',
+9 silly cache add   type: 'tag' }
+10 silly addNamed node@latest
+11 verbose addNamed "latest" is being treated as a dist-tag for node
+12 info addNameTag [ 'node', 'latest' ]
+13 silly mapToRegistry name node
+14 silly mapToRegistry using default registry
+15 silly mapToRegistry registry https://registry.npmjs.org/
+16 silly mapToRegistry data Result {
+16 silly mapToRegistry   raw: 'node',
+16 silly mapToRegistry   scope: null,
+16 silly mapToRegistry   name: 'node',
+16 silly mapToRegistry   rawSpec: '',
+16 silly mapToRegistry   spec: 'latest',
+16 silly mapToRegistry   type: 'tag' }
+17 silly mapToRegistry uri https://registry.npmjs.org/node
+18 verbose addNameTag registry:https://registry.npmjs.org/node not in flight; fetching
+19 verbose request uri https://registry.npmjs.org/node
+20 verbose request no auth needed
+21 info attempt registry request try #1 at 1:39:49 PM
+22 verbose request id 76d452209f4f5fff
+23 http request GET https://registry.npmjs.org/node
+24 http 200 https://registry.npmjs.org/node
+25 verbose headers { 'content-type': 'application/json; charset=UTF-8',
+25 verbose headers   server: 'UploadServer',
+25 verbose headers   'cache-control': 'max-age=300',
+25 verbose headers   'last-modified': 'Wed, 3 Jan 2018 7:15:29 GMT',
+25 verbose headers   etag: '"5a4c8311-53725"',
+25 verbose headers   'content-encoding': 'gzip',
+25 verbose headers   'content-length': '55500',
+25 verbose headers   'accept-ranges': 'bytes',
+25 verbose headers   date: 'Thu, 04 Jan 2018 21:39:49 GMT',
+25 verbose headers   via: '1.1 varnish',
+25 verbose headers   age: '3163',
+25 verbose headers   connection: 'keep-alive',
+25 verbose headers   'x-served-by': 'cache-sea1042-SEA',
+25 verbose headers   'x-cache': 'HIT',
+25 verbose headers   'x-cache-hits': '1',
+25 verbose headers   'x-timer': 'S1515101990.623947,VS0,VE1',
+25 verbose headers   vary: 'Accept-Encoding, Accept' }
+26 silly get cb [ 200,
+26 silly get   { 'content-type': 'application/json; charset=UTF-8',
+26 silly get     server: 'UploadServer',
+26 silly get     'cache-control': 'max-age=300',
+26 silly get     'last-modified': 'Wed, 3 Jan 2018 7:15:29 GMT',
+26 silly get     etag: '"5a4c8311-53725"',
+26 silly get     'content-encoding': 'gzip',
+26 silly get     'content-length': '55500',
+26 silly get     'accept-ranges': 'bytes',
+26 silly get     date: 'Thu, 04 Jan 2018 21:39:49 GMT',
+26 silly get     via: '1.1 varnish',
+26 silly get     age: '3163',
+26 silly get     connection: 'keep-alive',
+26 silly get     'x-served-by': 'cache-sea1042-SEA',
+26 silly get     'x-cache': 'HIT',
+26 silly get     'x-cache-hits': '1',
+26 silly get     'x-timer': 'S1515101990.623947,VS0,VE1',
+26 silly get     vary: 'Accept-Encoding, Accept' } ]
+27 verbose get saving node to /Users/melissa/.npm/registry.npmjs.org/node/.cache.json
+28 verbose correctMkdir /Users/melissa/.npm correctMkdir not in flight; initializing
+29 silly addNameTag next cb for node with tag latest
+30 silly addNamed node@9.3.0
+31 verbose addNamed "9.3.0" is a plain semver version for node
+32 silly mapToRegistry name node
+33 silly mapToRegistry using default registry
+34 silly mapToRegistry registry https://registry.npmjs.org/
+35 silly mapToRegistry data Result {
+35 silly mapToRegistry   raw: 'node',
+35 silly mapToRegistry   scope: null,
+35 silly mapToRegistry   name: 'node',
+35 silly mapToRegistry   rawSpec: '',
+35 silly mapToRegistry   spec: 'latest',
+35 silly mapToRegistry   type: 'tag' }
+36 silly mapToRegistry uri https://registry.npmjs.org/node
+37 verbose addRemoteTarball https://registry.npmjs.org/node/-/node-9.3.0.tgz not in flight; adding
+38 verbose addRemoteTarball [ 'https://registry.npmjs.org/node/-/node-9.3.0.tgz',
+38 verbose addRemoteTarball   'a71d437ff95cb028c87f07ff8fc5365a80fa3bd9' ]
+39 info retry fetch attempt 1 at 1:39:52 PM
+40 info attempt registry request try #1 at 1:39:52 PM
+41 http fetch GET https://registry.npmjs.org/node/-/node-9.3.0.tgz
+42 http fetch 200 https://registry.npmjs.org/node/-/node-9.3.0.tgz
+43 silly fetchAndShaCheck shasum a71d437ff95cb028c87f07ff8fc5365a80fa3bd9
+44 verbose addTmpTarball /var/folders/t7/07f7bgd53qnfdrq0kjfdh2ph0000gp/T/npm-1490-a3386e18/registry.npmjs.org/node/-/node-9.3.0.tgz not in flight; adding
+45 verbose addTmpTarball already have metadata; skipping unpack for node@9.3.0
+46 verbose correctMkdir /Users/melissa/.npm correctMkdir not in flight; initializing
+47 silly cache afterAdd node@9.3.0
+48 verbose afterAdd /Users/melissa/.npm/node/9.3.0/package/package.json not in flight; writing
+49 verbose correctMkdir /Users/melissa/.npm correctMkdir not in flight; initializing
+50 verbose afterAdd /Users/melissa/.npm/node/9.3.0/package/package.json written
+51 silly install resolved [ { name: 'node',
+51 silly install resolved     version: '9.3.0',
+51 silly install resolved     description: 'node',
+51 silly install resolved     main: 'index.js',
+51 silly install resolved     keywords: [ 'runtime' ],
+51 silly install resolved     repository:
+51 silly install resolved      { type: 'git',
+51 silly install resolved        url: 'git+https://github.com/aredridel/node-bin-gen.git' },
+51 silly install resolved     scripts: { preinstall: 'node installArchSpecificPackage' },
+51 silly install resolved     bin: { node: 'bin/node' },
+51 silly install resolved     dependencies: { 'node-bin-setup': '^1.0.0' },
+51 silly install resolved     license: 'ISC',
+51 silly install resolved     author: '',
+51 silly install resolved     engines: { npm: '>=5.0.0' },
+51 silly install resolved     bugs: { url: 'https://github.com/aredridel/node-bin-gen/issues' },
+51 silly install resolved     homepage: 'https://github.com/aredridel/node-bin-gen#readme',
+51 silly install resolved     _id: 'node@9.3.0',
+51 silly install resolved     _npmVersion: '5.6.0',
+51 silly install resolved     _nodeVersion: '8.9.3',
+51 silly install resolved     _npmUser: { name: 'aredridel', email: 'aredridel@dinhe.net' },
+51 silly install resolved     dist:
+51 silly install resolved      { integrity: 'sha512-mzd/bye/4HE8QbguOcpk7x38h9+ULo3WesRps8g+C89j/KLJgQs0FBQ2TPHR6SDf1+rWNJ/klaE22FDRpw2ddQ==',
+51 silly install resolved        shasum: 'a71d437ff95cb028c87f07ff8fc5365a80fa3bd9',
+51 silly install resolved        tarball: 'https://registry.npmjs.org/node/-/node-9.3.0.tgz' },
+51 silly install resolved     maintainers: [ [Object], [Object] ],
+51 silly install resolved     _npmOperationalInternal:
+51 silly install resolved      { host: 's3://npm-registry-packages',
+51 silly install resolved        tmp: 'tmp/node-9.3.0.tgz_1513314462027_0.628224415704608' },
+51 silly install resolved     directories: {},
+51 silly install resolved     _shasum: 'a71d437ff95cb028c87f07ff8fc5365a80fa3bd9',
+51 silly install resolved     _resolved: 'https://registry.npmjs.org/node/-/node-9.3.0.tgz',
+51 silly install resolved     _from: 'node@latest' } ]
+52 info install node@9.3.0 into /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom
+53 info installOne node@9.3.0
+54 verbose installOne of node to /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom not in flight; installing
+55 verbose correctMkdir /Users/melissa/.npm/_locks correctMkdir not in flight; initializing
+56 verbose lock using /Users/melissa/.npm/_locks/node-aab6a6a6f59f973a.lock for /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node
+57 warn engine node@9.3.0: wanted: {"npm":">=5.0.0"} (current: {"node":"4.6.0","npm":"2.15.9"})
+58 silly install write writing node 9.3.0 to /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node
+59 verbose unbuild node_modules/node
+60 silly gentlyRm /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node is being purged from base /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom
+61 verbose gentlyRm don't care about contents; nuking /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node
+62 verbose tar unpack /Users/melissa/.npm/node/9.3.0/package.tgz
+63 verbose tar unpacking to /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node
+64 silly gentlyRm /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node is being purged
+65 verbose gentlyRm don't care about contents; nuking /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node
+66 silly gunzTarPerm modes [ '755', '644' ]
+67 silly gunzTarPerm extractEntry package.json
+68 silly gunzTarPerm extractEntry installArchSpecificPackage.js
+69 silly gunzTarPerm extractEntry README.md
+70 verbose write writing to /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node/package.json
+71 info preinstall node@9.3.0
+72 verbose unsafe-perm in lifecycle true
+73 info node@9.3.0 Failed to exec preinstall script
+74 verbose unlock done using /Users/melissa/.npm/_locks/node-aab6a6a6f59f973a.lock for /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node
+75 verbose stack Error: node@9.3.0 preinstall: `node installArchSpecificPackage`
+75 verbose stack Exit status 1
+75 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:217:16)
+75 verbose stack     at emitTwo (events.js:87:13)
+75 verbose stack     at EventEmitter.emit (events.js:172:7)
+75 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+75 verbose stack     at emitTwo (events.js:87:13)
+75 verbose stack     at ChildProcess.emit (events.js:172:7)
+75 verbose stack     at maybeClose (internal/child_process.js:829:16)
+75 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+76 verbose pkgid node@9.3.0
+77 verbose cwd /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom
+78 error Darwin 17.3.0
+79 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "install" "node"
+80 error node v4.6.0
+81 error npm  v2.15.9
+82 error code ELIFECYCLE
+83 error node@9.3.0 preinstall: `node installArchSpecificPackage`
+83 error Exit status 1
+84 error Failed at the node@9.3.0 preinstall script 'node installArchSpecificPackage'.
+84 error This is most likely a problem with the node package,
+84 error not with npm itself.
+84 error Tell the author that this fails on your system:
+84 error     node installArchSpecificPackage
+84 error You can get information on how to open an issue for this project with:
+84 error     npm bugs node
+84 error Or if that isn't available, you can get their info via:
+84 error
+84 error     npm owner ls node
+84 error There is likely additional logging output above.
+85 verbose exit [ 1, true ]
+86 verbose unbuild node_modules/node
+87 info preuninstall node@9.3.0
+88 info uninstall node@9.3.0
+89 verbose unbuild rmStuff node@9.3.0 from /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules
+90 silly gentlyRm /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/.bin/node is being gently removed
+91 silly gentlyRm verifying /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom is an npm working directory
+92 silly gentlyRm containing path /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom is under npm's control, in /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom
+93 silly gentlyRm deletion target /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/.bin/node is under /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom
+94 verbose gentlyRm vacuuming from /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/.bin/node up to /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom
+95 info postuninstall node@9.3.0
+96 silly gentlyRm /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node is being purged from base /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom
+97 verbose gentlyRm don't care about contents; nuking /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node
+98 silly vacuum-fs purging /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules/node
+99 silly vacuum-fs quitting because other entries in /Users/melissa/Desktop/AllProjects/Mean/Express/Chatroom/node_modules
