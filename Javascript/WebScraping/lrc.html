@@ -1,0 +1,27 @@
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+    $.getJSON('https://allorigins.me/get?url=' + encodeURIComponent('https://www.youtube.com/results?search_query=ellie+goulding') + '&callback=?', function(data){
+        var content1 = $(data.contents);
+        var found = content1.find('#results').find('ol').find('ol').find('li').find('a').each(function(){
+            var reg = RegExp('google');
+            var testing = reg.test(this);
+            var otherReg = RegExp('watch');
+            var other = RegExp('Play all');
+            var mix = RegExp('Mix -');
+            var num = RegExp('[0-9]');
+            if (!reg.test(this) && otherReg.test(this) && !other.test(this.text) && !mix.test(this.text)){
+                source = this.href;
+                var copy = source.replace('file:///', '');
+                //console.log(this.text);
+                this.href = 'https://www.youtube.com/'+copy;       
+            $('#results').append(this);
+            }
+        });
+        });
+        </script>
+    <body>
+        <div id = 'results'></div>
+    </body>
+    </html>

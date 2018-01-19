@@ -8,12 +8,15 @@
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="react-container"></div>
     <script type="text/babel">
 
-      ReactDOM.render(
-        <h1>Hello, world!</h1>,
-        document.getElementById('root')
+      ReactDOM.render(<ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        </ul>,
+        document.getElementById('react-container')
       );
 
     </script>
