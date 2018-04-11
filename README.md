@@ -7,20 +7,32 @@ A guide through the different folders:
 Algorithms: 
 Algorithm challenges I have solved and/or yet to solve from Coding Dojo or CodeFights
 
+C:
+Continuing education of C
+
 C#: 
 Continuing education of C#
 
-iOS:
-Continuing education of iOS(Swift)
+Java:
+Continuing education of Java
 
-MEAN: 
-Various projects using Javascript and Node.js
+Javascript:
+Various projects using Javascript, Node.js, Express, MongoDB, React, and Angular
 
-Python: 
+MySQL:
+Continuing education of MySQL
+
+PHP:
+Continuing education of PHP
+
+Python:
 Various projects using Python, Django, Flask, mySQL, SQLite
 
 Ruby: 
 Continuing education of Ruby on Rails
+
+Swift:
+Continuing education of iOS(Swift)
 
 Web Fundamentals: 
 Various projects using HTML, CSS, jQuery, Javascript, API, Ajax
