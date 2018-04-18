@@ -14,6 +14,17 @@ public class GorillaTest {
 		g.climb();
 		g.displayEnergy();
 		m.displayEnergy();
+		Dragon d = new Dragon();
+		d.displayEnergy();
+		d.attackTown();
+		d.displayEnergy();
+		d.attackTown();
+		d.attackTown();
+		d.eatHumans();
+		d.eatHumans();
+		d.fly();
+		d.fly();
+		d.displayEnergy();
 	}
 
 }

@@ -1,6 +1,6 @@
 
 public class Mammal {
-	public int energyLevel = 100;
+	protected int energyLevel = 100;
 	public Mammal(){
 	}
 	
