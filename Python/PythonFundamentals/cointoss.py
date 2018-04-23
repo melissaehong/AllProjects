@@ -6,6 +6,7 @@ def coin_toss(repetition):
     head_count = 0
     tail_count = 0
     num = 1
+    # this is the part regarding tosisng a coin
     for x in range (1, repetition):
         coin = round(random.randint(0,1))
         if coin == 0:
